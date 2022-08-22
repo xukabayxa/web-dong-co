@@ -1,0 +1,135 @@
+/*****************************************************/
+/* Responsive for web
+/*****************************************************/
+@media screen and  (max-width: 1024px) {
+
+	.site-footer{
+		padding: 15px 10px;
+	}
+	.site-footer .rt-footer{
+		width: 100%;
+		padding: 0;
+		overflow: hidden;
+		margin: 0 0 10px 0;
+	}
+	.header-layout{
+    width: 110px;
+	}
+	.nav-layout{
+		width: 40px;
+	}
+	.widget_glt_widget{
+    position: relative;
+    top: inherit;
+    padding-top: 10px;
+    right: inherit;
+    text-align: center;
+	}
+	.mobile-menu-primary > span{
+		display: none;
+	}
+	.main-navigation{
+		height: 50px;
+	}
+	.site-branding{
+		padding: 10px;
+	}
+	.rt-navbar-toggle .icon-bar{
+		background: #333;
+	}
+	#flags{
+		margin: auto;
+		text-align: center;
+	}
+	#flags ul{
+		text-align: center;
+		float: none !important;
+	}
+	#flags li{
+	    float: none !important;
+	    display: inline-block;
+	}
+	.page_home .content_page .colum-left{
+		display: none;
+	}
+	.page_home .content_page .colum-right{
+		width: 100%;
+	}
+	.site-container{
+		width: 100%;
+		padding: 0 5px;
+		overflow: hidden;
+	}
+	.content-area, .widget-area{
+		clear: both;
+		padding: 0 0 15px 0;
+	}
+	.product_home .product_list{
+		width: 33.333%;
+		padding: 0 1%;
+		margin: 0 auto 15px;
+	}
+	.product_home .content_cate img{
+		margin:0 auto 10px;
+		display: block;
+	}
+	.support-img{
+		display: none;
+	}
+	.fusion-one-fourth{
+		width: 48%;
+		margin: 0 1% 20px;
+	}
+	.fusion-row{
+		clear: none;
+	}
+	.box-pro{
+		padding: 10px 5px;
+	}
+}	
+
+@media screen and  (max-width: 568px) {
+	.product-style li{
+		width: 48%;
+		margin: 0 1% 15px;
+	}
+	.product-style li:nth-child(2n+1){
+		clear: both;
+	}
+	.product-style li:nth-child(4n+1){
+		clear: none;
+	}
+}
+
+@media screen and  (max-width: 480px) {
+
+}
+
+@media screen and  (max-width: 414px) {
+	.product_home .product_list{
+		width: 100%;
+	}
+	.product_home .content_cate img {
+		width: 100%;
+		height: auto;
+	}
+	.content-products .rt_woocommerce-loop-product__title a{
+		line-height: 20px;
+		height: 40px;
+	}
+	.fusion-one-fourth{
+		width: 100%;
+		margin: 0 auto 15px;
+	}
+	.arc-news .new-list .news-post .img-post{
+		width: 100%;
+		margin: 0 auto 10px;
+	}
+	.arc-news .new-list .news-post .img-post img{
+		width: 100%;
+	}
+}
+
+@media screen and  (max-width: 320px) {
+
+}
