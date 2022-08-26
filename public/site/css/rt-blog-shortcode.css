@@ -1,4 +1,4 @@
-/* style blog 
+/* style blog
 ------------------------------------------------------ */
 /* all style */
 .rt-blog-shortcode {
@@ -16,7 +16,7 @@
 	margin: 0 2.6% 20px 0;
 }
 .fusion-one-fourth {
-    width: 23.75%;
+    width: 23.34%;
     margin: 0 1.66% 20px 0;
 }
 .fusion-column-last {
@@ -324,7 +324,7 @@
 	max-height: 60px;
 	line-height: 20px;
 
-}	
+}
 .rt-blog-shortcode.style-blog-4 .first-element-layout  article .entry-content .view-more{
 	display: block;
 	text-align: right;
@@ -449,7 +449,7 @@
     text-align: center;
     font-size: 14px;
 }
-.rt-blog-shortcode.style-blog-5 .meta span.date-time, 
+.rt-blog-shortcode.style-blog-5 .meta span.date-time,
 .rt-blog-shortcode.style-blog-5 .meta span.number-comment {
 	color: #333333;
 }

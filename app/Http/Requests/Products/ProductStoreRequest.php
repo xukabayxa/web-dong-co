@@ -37,11 +37,7 @@ class ProductStoreRequest extends BaseRequest
             'galleries' => 'required|array|min:1|max:20',
             'galleries.*.image' => 'required|file|mimes:png,jpg,jpeg|max:10000',
             'post_ids' => 'nullable|array|max:5',
-            'attributes' => 'nullable|array',
             'videos' => 'nullable|array',
-            'url_custom' => [
-                Rule::requiredIf($this->use_url_custom == 'true' || $this->use_url_custom == 1),
-            ],
         ];
 
         $url_custom = $this->get('url_custom');
@@ -49,15 +45,7 @@ class ProductStoreRequest extends BaseRequest
             $rules['url_custom']  = 'unique:products,url_custom';
         }
 
-        $attributeInput = $this->get('attributes');
         $videoInput = $this->get('videos');
-
-        if(($attributeInput)) {
-            foreach ($attributeInput as $key => $attribute) {
-                $rules['attributes.'.$key.'.'.'attribute_id']   = 'required';
-                $rules['attributes.'.$key.'.'.'value']   = 'required';
-            }
-        }
 
         if(($videoInput)) {
             foreach ($videoInput as $key => $video) {

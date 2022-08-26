@@ -44,6 +44,9 @@ class PostController extends Controller
 			->editColumn('updated_by', function ($object) {
 				return $object->user_update->name ? $object->user_update->name : '';
 			})
+            ->editColumn('image', function ($object) {
+                return '<img style ="max-width:45px !important" src="' . ($object->image->path ?? '') . '"/>';
+            })
             ->editColumn('cate_id', function ($object) {
                 return $object->category->name ?? '';
             })
@@ -68,7 +71,7 @@ class PostController extends Controller
 			})
 
 			->addIndexColumn()
-			->rawColumns(['name','action'])
+			->rawColumns(['name','action', 'image'])
 			->make(true);
     }
 

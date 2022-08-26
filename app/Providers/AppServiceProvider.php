@@ -57,6 +57,11 @@ class AppServiceProvider extends ServiceProvider
         );
 
         View::composer(
+            'site.partials.before_footer',
+            FooterComposer::class
+        );
+
+        View::composer(
             'site.partials.header',
             HeaderComposer::class
         );
@@ -66,9 +71,5 @@ class AppServiceProvider extends ServiceProvider
             HeaderComposer::class
         );
 
-        View::composer(
-            'site.partials.single_product',
-            HeaderComposer::class
-        );
     }
 }

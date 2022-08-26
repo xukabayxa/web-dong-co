@@ -115,28 +115,15 @@ class ProductController extends Controller
 			$object->status = $request->status;
 			$object->manufacturer_id = $request->manufacturer_id;
 			$object->origin_id = $request->origin_id;
-			$object->title_seo = $request->title_seo;
-			$object->content_seo = $request->content_seo;
             $object->url_custom = $request->url_custom;
-            $object->use_url_custom = ($request->use_url_custom == 'true' || $request->use_url_custom == '1') ? 1 : 0;
             $object->state = $request->state ?? Product::CON_HANG;
-            $object->is_pin = $request->is_pin ?? Product::NOT_PIN;
 
 			$object->save();
 
 			FileHelper::uploadFile($request->image, 'products', $object->id, ThisModel::class, 'image',1);
 
 			$object->syncGalleries($request->galleries);
-
-            if(isset($request->all()['attributes'])) {
-                foreach ($request->all()['attributes'] as $attribute) {
-                    AttributeValue::query()->create([
-                        'attribute_id' => $attribute['attribute_id'],
-                        'value' => $attribute['value'],
-                        'product_id' => $object->id,
-                    ]);
-                }
-            }
+			$object->syncDocuments($request->attachments, 'products/attachments/');
 
             if(isset($request->all()['videos'])) {
                 foreach ($request->all()['videos'] as $video) {
@@ -146,10 +133,6 @@ class ProductController extends Controller
                         'product_id' => $object->id,
                     ]);
                 }
-            }
-
-            if(isset($request->all()['tag_ids'])) {
-                $object->addTags($request->all()['tag_ids']);
             }
 
 			DB::commit();
@@ -195,12 +178,8 @@ class ProductController extends Controller
 			$object->status = $request->status;
 			$object->manufacturer_id = $request->manufacturer_id;
 			$object->origin_id = $request->origin_id;
-            $object->title_seo = $request->title_seo;
-            $object->content_seo = $request->content_seo;
             $object->url_custom = $request->url_custom;
-            $object->use_url_custom = ($request->use_url_custom == 'true' || $request->use_url_custom == '1') ? 1 : 0;
             $object->state = $request->state ?? Product::CON_HANG;
-            $object->is_pin = $request->is_pin ?? Product::NOT_PIN;
 
 			$object->save();
 
@@ -212,17 +191,7 @@ class ProductController extends Controller
 			}
 
 			$object->syncGalleries($request->galleries);
-
-            if(isset($request->all()['attributes'])) {
-                AttributeValue::query()->where('product_id', $object->id)->delete();
-                foreach ($request->all()['attributes'] as $attribute) {
-                    AttributeValue::query()->create([
-                        'attribute_id' => $attribute['attribute_id'],
-                        'value' => $attribute['value'],
-                        'product_id' => $object->id,
-                    ]);
-                }
-            }
+            $object->syncDocuments($request->attachments, 'products/attachments/');
 
             if(isset($request->all()['videos'])) {
                 ProductVideo::query()->where('product_id', $object->id)->delete();
@@ -233,12 +202,6 @@ class ProductController extends Controller
                         'product_id' => $object->id,
                     ]);
                 }
-            }
-
-            if(isset($request->all()['tag_ids'])) {
-                $object->updateTags($request->all()['tag_ids']);
-            } else {
-                $object->deleteTags();
             }
 
 			DB::commit();
@@ -338,4 +301,29 @@ class ProductController extends Controller
 
         return redirect()->route($this->route.'.index')->with($message);
     }
+
+    public function deleteFile(Request $request, $id) {
+        $json = new \stdClass();
+        $req = Product::findOrFail($id);
+
+        $attachments = explode(", ", $req->attachments);
+
+        if (!$request->file || !in_array($request->file, $attachments)) {
+            $json->success = false;
+            $json->message = "Không có file";
+            return \Response::json($json);
+        }
+
+        if (file_exists(public_path().$request->file)) unlink(public_path().$request->file);
+
+        $attachments = array_diff($attachments, [$request->file]);
+        $req->attachments = join(", ", $attachments);
+        $req->save();
+        $json->success = true;
+        $json->message = "Xóa thành công";
+        $json->data = $req;
+
+        return \Response::json($json);
+    }
+
 }

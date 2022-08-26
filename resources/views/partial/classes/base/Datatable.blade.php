@@ -108,6 +108,11 @@
                         <i class="fa fa-plus"></i> Tạo mới
                     </a>`;
                 }
+                if (options.create_modal_2) {
+                    html += `<a class="btn btn-info create-modal" href="javascript:void(0)">
+                        <i class="fa fa-plus"></i> Tạo mới
+                    </a>`;
+                }
                 if (options.act) {
                     html += `
                     <button class="btn btn-info dropdown-toggle btn-remove-product" type="button"

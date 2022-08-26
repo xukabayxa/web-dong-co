@@ -43,11 +43,11 @@
             this._image = new Image(value, this);
         }
 
-		clearImage() {
-			if (this.image) this.image.clear();
-		}
+        clearImage() {
+            if (this.image) this.image.clear();
+        }
 
-		get galleries() {
+        get galleries() {
             return this._galleries || [];
         }
 
@@ -123,6 +123,10 @@
             this._origin_id = value || null;
         }
 
+        get documents() {
+            return (this.attachments || '').split(', ').map(val => val.trim()).filter(val => !!val);
+        }
+
         // get tag_ids() {
         //     return this._tag_ids;
         // }
@@ -159,7 +163,7 @@
             let image = this.image.submit_data;
             if (image) data.append('image', image);
 
-			this.galleries.forEach((g, i) => {
+            this.galleries.forEach((g, i) => {
                 if (g.id) data.append(`galleries[${i}][id]`, g.id);
                 let gallery = g.image.submit_data;
                 if (gallery) data.append(`galleries[${i}][image]`, gallery);

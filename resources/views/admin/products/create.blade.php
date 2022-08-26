@@ -34,13 +34,17 @@
             @include('admin.products.formJs')
                 $scope.submit = function () {
                 $scope.loading.submit = true;
+                let data = $scope.form.submit_data;
+                $scope.addition_attachments.forEach((val, index) => {
+                    data.append('attachments[]', $('#document' + index).get(0).files[0]);
+                });
                 $.ajax({
                     type: 'POST',
                     url: "{!! route('Product.store') !!}",
                     headers: {
                         'X-CSRF-TOKEN': CSRF_TOKEN
                     },
-                    data: $scope.form.submit_data,
+                    data: data,
                     processData: false,
                     contentType: false,
                     success: function (response) {

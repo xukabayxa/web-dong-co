@@ -97,34 +97,6 @@
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="form-group custom-group mb-4">
-                    <label class="form-label">Chọn thẻ tag</label>
-                    <select select2 class="select2 form-control" name="tag_group_id[]"
-                            ng-model="form.tag_ids"
-                            ng-class="{'is-invalid': errors && errors.tag_ids}"
-                            multiple>
-                        <option ng-repeat="t in tags"
-                                value="<% t.id %>"
-                                ng-selected="arrayInclude(form.tag_ids, t.id)"><% t.name %></option>
-
-                    </select>
-
-                    <style>
-                        .btn-addon {
-                            border: 1px solid #c4cdd5 !important;
-                            background-color: #fff!important;
-                        }
-                    </style>
-                    <span class="input-group-btn">
-                        <button class="btn btn-addon" type="button" data-toggle="modal" data-target="#createTag"><i class="fa fa-plus"></i></button>
-                    </span>
-                </div>
-
-            </div>
-        </div>
-
         <div class="form-group custom-group mb-4">
             <label class="form-label">Mô tả ngắn gọn</label>
             <textarea class="form-control" ck-editor rows="5" ng-model="form.short_des"></textarea>
@@ -199,39 +171,6 @@
             </select>
         </div>
 
-        <div class="form-group custom-group mb-4">
-            <label class="form-label">Ghim sản phẩm</label>
-            <select id="my-select" class="form-control custom-select" ng-model="form.is_pin">
-                <option value="2">Không ghim</option>
-                <option value="1">Ghim</option>
-            </select>
-        </div>
-
-        <div class="row">
-            <div class="col-sm-6">
-                    <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="use_url_custom"
-                               ng-checked="form.use_url_custom" ng-model="form.use_url_custom">
-                        <label class="custom-control-label" for="use_url_custom">Sử dụng url thủ công
-                            <br>({{$_SERVER['HTTP_HOST'].'/san-pham/url'}})
-                        </label>
-                    </div>
-            </div>
-
-            <div class="col-sm-6" ng-if="form.use_url_custom">
-                <div class="form-group custom-group mb-4">
-                    <label class="form-label required-label">url thủ công</label>
-                    <input class="form-control " type="text" ng-model="form.url_custom"
-                           ng-disabled="!form.use_url_custom">
-                    <span class="invalid-feedback d-block" role="alert">
-                 <strong>
-                    <% errors.url_custom[0] %>
-                </strong>
-            </span>
-                </div>
-            </div>
-        </div>
-
         <div class="form-group text-center">
             <div class="main-img-preview">
                 <p class="help-block-img">* Ảnh định dạng: jpg, png không quá 2MB.</p>
@@ -296,18 +235,40 @@
             </span>
         </div>
 
-        <div class="form-group mb-4 text-center">
-            <label for="">Thông tin Seo</label>
-        </div>
-
-        <div class="form-group custom-group mb-4 text-center">
-            <label class="form-label">Tiêu đề seo</label>
-            <input class="form-control" type="text" ng-model="form.title_seo">
-        </div>
-
-        <div class="form-group custom-group mb-4 text-center">
-            <label class="form-label">Nội dung seo</label>
-            <textarea class="form-control" rows="3" ng-model="form.content_seo"></textarea>
+        <div class="col-md-12">
+            <div class="form-group">
+                <label>File đính kèm: </label>
+                <div class="d-flex">
+                    <div class="document-item" ng-repeat="d in form.documents">
+                        <a href="javascript:void(0)" class="remove" ng-click="deleteFile(d)">
+                            <i class="fa fa-times"></i>
+                        </a>
+                        <a href="<% d %>" target="_blank" class="fa fa-file-pdf-o fa-3x"></a>
+                        <a href="<% d %>" target="_blank" class="mt-1 text-ellipsis" title="<% getFileName(d) %>"><% getFileName(d) %></a>
+                    </div>
+                    <div class="document-item" ng-repeat="d in addition_attachments"
+                         title="<% d.name ? d.name : 'Chọn file' %>"
+                         ng-class="{'error': errors && errors['attachments.' + $index]}">
+                        <a href="javascript:void(0)" class="remove" ng-click="removeFile($index)"><i
+                                class="fa fa-times"></i></a>
+                        <label class="fa fa-file-o fa-3x mb-0 text-secondary cursor-pointer"
+                               for="document<% $index %>" ng-if="!d.name"></label>
+                        <label class="fa fa-file-pdf-o fa-3x mb-0 text-secondary cursor-pointer"
+                               for="document<% $index %>" ng-if="d.name"></label>
+                        <label class="mt-1 mb-0 text-secondary file-name cursor-pointer"
+                               for="document<% $index %>"><% d.name ? d.name : 'Chọn file' %></label>
+                        <input class="d-none attachments" data-index="<% $index %>" type="file"
+                               id="document<% $index %>" name="attachments[]">
+                    </div>
+                    <div class="document-item">
+                        <a href="javascript:void(0)" class="fa fa-plus fa-2x text-secondary"
+                           ng-click="addFile()"></a>
+                    </div>
+                </div>
+                <span class="invalid-feedback d-block" role="alert" ng-if="errors && errors['attachments']">
+                                <strong><% errors['attachments'][0] %></strong>
+                            </span>
+            </div>
         </div>
 
         <div class="form-group text-center">
@@ -346,51 +307,6 @@
             </button>
         </div>
 
-        <div class="form-group text-center">
-            <label for="">Thông số mở rộng</label>
-            <div ng-if="!form.attribute_values || !form.attribute_values.length">Chưa có thuộc tính</div>
-
-            <div ng-repeat="attribute in form.attribute_values track by $index">
-                <div class="mb-2 d-flex align-items-center">
-                    <u>Thông số <% $index + 1 %></u>
-                    <button class="btn btn-link text-danger ml-auto" ng-click="form.removeAttribute($index)"><i class="fa fa-times"></i></button>
-                </div>
-                <div class="form-group custom-group mb-4">
-                    <label class="form-label required-label">Thuộc tính</label>
-                    <select class="form-control" ng-model="attribute.attribute_id">
-                        <option value="">Chọn thuộc tính</option>
-                        <option ng-repeat="att in attributes" ng-value="att.id" ng-selected="att.id == attribute.attribute_id">
-                            <% att.name %>
-                        </option>
-                    </select>
-                    <span class="invalid-feedback d-block" role="alert">
-                        <strong>
-                            <% errors['attributes.' + $index + '.attribute_id' ][0] %>
-                        </strong>
-                    </span>
-                </div>
-
-                <div class="form-group custom-group mb-4">
-                    <label class="form-label required-label">Giá trị</label>
-                    <input class="form-control " type="text" ng-model="attribute.value">
-                    <span class="invalid-feedback d-block" role="alert">
-                        <strong>
-                            <% errors['attributes.' + $index + '.value' ][0] %>
-                        </strong>
-                    </span>
-                </div>
-            </div>
-
-            <button class="btn btn-info btn-sm mt-1" ng-click="form.addAttribute()">
-                <i class="fa fa-plus"></i> Thêm thông số
-            </button>
-
-            <span class="invalid-feedback">
-                <strong>
-                    <% errors.galleries[0] %>
-                </strong>
-            </span>
-        </div>
     </div>
 </div>
 <hr>

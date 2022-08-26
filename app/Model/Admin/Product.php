@@ -14,6 +14,9 @@ use App\Model\Common\User;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
 use App\Helpers\FileHelper;
+use Illuminate\Support\Facades\URL;
+use Illuminate\Support\Str;
+use File as FileSystem;
 
 class Product extends BaseModel
 {
@@ -273,6 +276,35 @@ class Product extends BaseModel
                     FileHelper::uploadFile($file, 'product_gallery', $gallery->id, ProductGallery::class, null, 1);
                 }
             }
+        }
+    }
+
+    public function syncDocuments($documents, $folder)
+    {
+        $folderDir = implode(DIRECTORY_SEPARATOR, ["public", "uploads", $folder]);
+        $attachments = [$this->attachments];
+
+        if ($documents) {
+            foreach ($documents as $document)  {
+                $filename = $document->getClientOriginalName();
+                $name = Str::slug(str_replace("/", "", $filename));
+                $extension = pathinfo($filename, PATHINFO_EXTENSION);
+                $destinationFileName = $name . '-' . time() . '-' . randomString(4);
+                $destinationFile = $destinationFileName . '.' . $extension;
+                $destinationPath = base_path() . DIRECTORY_SEPARATOR . $folderDir;
+
+                if (!is_dir($destinationPath)) {
+                    FileSystem::makeDirectory($destinationPath, 0777, true);
+                }
+
+                $document->move($destinationPath, $destinationFile);
+
+                $path = DIRECTORY_SEPARATOR . implode(DIRECTORY_SEPARATOR, ["uploads", $folder, $destinationFile]);
+
+                array_push($attachments, $path);
+            }
+            $this->attachments = join(', ', $attachments);
+            $this->save();
         }
     }
 

@@ -23,7 +23,7 @@
 			</span>
 		</div>
 		<div class="form-group custom-group mb-4">
-			<label class="form-label required-label">Tóm tắt nội dung</label>
+			<label class="form-label">Tóm tắt nội dung</label>
 			<textarea id="my-textarea" class="form-control" ng-model="form.intro" rows="3"></textarea>
 			<span class="invalid-feedback d-block" role="alert">
 				<strong><% errors.intro[0] %></strong>

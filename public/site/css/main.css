@@ -402,8 +402,8 @@ width: 20.5%;
     font-size: 16px;
     font-weight: 400;
 }
-.main-navigation li:hover > a, .main-navigation .current_page_item > a , 
-.main-navigation .current-cat > a , .main-navigation .current-menu-item > a { 
+.main-navigation li:hover > a, .main-navigation .current_page_item > a ,
+.main-navigation .current-cat > a , .main-navigation .current-menu-item > a {
     color: #03add8;
 }
 
@@ -1302,7 +1302,7 @@ a.rslides_nav.next:after {
 }
 .site-footer-home .widget_nav_menu  {
     float: right;
-    clear: none !important; 
+    clear: none !important;
 }
 .site-footer-home .widget_nav_menu ul{
     margin: 0;
@@ -1436,7 +1436,7 @@ width: 37%;
 }
 
 @media (min-width: 414px) {
-    
+
 }
 
 .bottom-footer .widget_nav_menu .menu li a {
@@ -1780,11 +1780,11 @@ h1, h2, h3, h4, h5, h6 {
 .list .news-post .post-thumbnail img {
     background-color: #fff;
     padding: 3px;
-    border: 1px solid #e4e4e4; 
+    border: 1px solid #e4e4e4;
     -webkit-transition: -webkit-transform 0.5s ease;
     -moz-transition: -moz-transform 0.5s ease;
     transition: transform 0.5s ease;
-} 
+}
 .list .news-post .post-thumbnail:hover img {
 /*    -webkit-transform: scale(1.25);
     -moz-transform: scale(1.25);
@@ -1930,7 +1930,7 @@ h1, h2, h3, h4, h5, h6 {
     color: #fff;
 }
 
-@media (max-width: 413px) { 
+@media (max-width: 413px) {
     .content_style_1 .news-post {
         width: 100%;
     }
@@ -2044,9 +2044,9 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.004);
 }
 .rt__support_style_2 .rt__support_bottom .single_mail {
-    
+
 }
-/*rt__support_style_3*/ 
+/*rt__support_style_3*/
 .rt__support_style_3 .rt_support_box .support-content .info {
     width: 90%;
     float: left;
@@ -2145,10 +2145,10 @@ h1, h2, h3, h4, h5, h6 {
     display: block;
 }
 .wpcf7 input[type=text]:focus, .wpcf7 input[type=text]:active,
- .wpcf7 input[type=email]:focus, .wpcf7 input[type=email]:active, 
- .wpcf7 input[type=tel]:focus, .wpcf7 input[type=tel]:active, 
- .wpcf7 input[type=number]:focus, .wpcf7 input[type=number]:active, 
- .wpcf7 textarea:focus, .wpcf7 textarea:active, .wpcf7 select:focus, 
+ .wpcf7 input[type=email]:focus, .wpcf7 input[type=email]:active,
+ .wpcf7 input[type=tel]:focus, .wpcf7 input[type=tel]:active,
+ .wpcf7 input[type=number]:focus, .wpcf7 input[type=number]:active,
+ .wpcf7 textarea:focus, .wpcf7 textarea:active, .wpcf7 select:focus,
  .wpcf7 select:active, .wpcf7 input[type=date]:focus,
   .wpcf7 input[type=date]:active {
     border: 0;
@@ -2255,7 +2255,7 @@ display: none;
     visibility: visible;
 }
 
-/* css menu mobile 
+/* css menu mobile
 -------------------------------------------------------------*/
 /* secondary-toggle button menu top */
 .menu-repons{
@@ -2343,7 +2343,7 @@ display: none;
     border-top: 1px solid rgba(51, 51, 51, 0.1);
     position: relative;
 }
-.nav-primary-mobile .nav-menu > ul > li:first-child, 
+.nav-primary-mobile .nav-menu > ul > li:first-child,
 .nav-primary-mobile .nav-menu > li:first-child {
     border-top: 0;
 }
@@ -2438,7 +2438,7 @@ display: none;
 
 
 @charset "utf-8";
-/* CSS Document 
+/* CSS Document
 *Author SinhVienLife http://levantoan.com
 */
 /*Comment style*/
@@ -2677,7 +2677,7 @@ div.error {
     margin-bottom: 10px;
     text-align: center;
 }
-#formcmmaxweb #commentform p{   
+#formcmmaxweb #commentform p{
     overflow: hidden;
 }
 #formcmmaxweb .name-email p{
@@ -2709,15 +2709,15 @@ div.error {
 }
 
 #formcmmaxweb ::-moz-placeholder { /* Firefox 18- */
-   color: #999999;  
+   color: #999999;
 }
 
 #formcmmaxweb ::-moz-placeholder {  /* Firefox 19+ */
-   color: #999999;  
+   color: #999999;
 }
 
-#formcmmaxweb ::-ms-input-placeholder {  
-   color: #999999;  
+#formcmmaxweb ::-ms-input-placeholder {
+   color: #999999;
 }
 /*#comment style 1  đánh giá khách hàng 1*/
 .title-des{
@@ -2987,7 +2987,7 @@ div.error {
     height: 85px;
     border: 1px solid #ccc;
     position: relative;
-} 
+}
 .products-2 > .slick-list .slick-track li .product_item .rt-thumb a img{
     width: auto;
     height: auto;
@@ -3004,7 +3004,7 @@ div.error {
     height: auto;
     max-height: 36px;
     font-size: 13px;
-} 
+}
 .products-2 > .slick-list .slick-track li .product_item  .content-products .rt_add_to_cart {
     display: none;
 }
@@ -3028,7 +3028,7 @@ page_home
 }
 .page_home .content_page{
     overflow: hidden;
-    clear: both;    
+    clear: both;
     padding: 15px;
     border: 1px solid #ddd;
 }
@@ -3061,7 +3061,7 @@ product_home
 }
 .product_home .product_list{
     float: left;
-    width: 18.3%;
+    /*width: 18.3%;*/
     margin: 0 2.12% 20px 0;
 }
 .product_home .product_list:nth-child(5n){
@@ -3119,7 +3119,7 @@ product_home
 .rt-before-footer .slick-next{
     width: 32px;
     height: 64px;
-    background: url(../image/right.png)no-repeat;    
+    background: url(../image/right.png)no-repeat;
 }
 
 .slick-slide img{
@@ -3164,15 +3164,15 @@ before-footer
 .rt-twitter:hover,.rt-twitter:active {
     background: #0084b4;
 }
- 
+
 .rt-facebook {
     background: #3B5997;
 }
- 
+
 .rt-facebook:hover,.rt-facebook:active {
     background: #2d4372;
 }
- 
+
 .rt-googleplus {
     background: #D64937;
 }

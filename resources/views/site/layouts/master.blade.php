@@ -3,7 +3,7 @@
 <head>
     @include('site.partials.head')
 </head>
-<body class="home blog hfeed has-sidebar woocommerce" ng-app="App">
+<body class="home blog hfeed has-sidebar woocommerce single-product" ng-app="App">
 
 <div class="site site-container full w1200">
     @include('site.partials.header')
@@ -28,17 +28,15 @@
         <ul id="moblie-menu" class="mobile-menu">
             <li id="menu-item-235"
                 class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-235">
-                <a href="http://sonhaiphat.vn/">Trang chủ</a></li>
+                <a href="{{route('front.home_page')}}">Trang chủ</a></li>
             <li id="menu-item-169" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169"><a
-                    href="http://sonhaiphat.vn/gioi-thieu/">Giới thiệu</a></li>
-            <li id="menu-item-165" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-165"><a
-                    href="http://sonhaiphat.vn/dich-vu/">Dịch vụ</a></li>
+                    href="{{route('front.about')}}">Giới thiệu</a></li>
             <li id="menu-item-167" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-167"><a
-                    href="http://sonhaiphat.vn/tin-tuc/">Tin tức</a></li>
+                    href="{{route('front.post-list')}}">Tin tức</a></li>
             <li id="menu-item-166" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-166"><a
-                    href="http://sonhaiphat.vn/du-an/">Dự án</a></li>
+                    href="{{route('front.project-list')}}">Dự án</a></li>
             <li id="menu-item-168" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-168"><a
-                    href="http://sonhaiphat.vn/lien-he/">Liên hệ</a></li>
+                    href="{{route('front.contact')}}">Liên hệ</a></li>
         </ul>
     </div><!-- .mobile-menu-container -->
 
@@ -47,7 +45,6 @@
 
 </div>
 
-<div id="glt-translate-trigger"><span class="notranslate">Translate &raquo;</span></div>
 <div id="glt-toolbar"></div>
 <div id='glt-footer'></div>
 
@@ -75,7 +72,6 @@
     };
     /* ]]> */
 </script>
-<script type='text/javascript' src='/site/js/scripts.js'></script>
 <script type='text/javascript' src='/site/js/scripts.js'></script>
 <script type='text/javascript' src='/site/js/element.js?cb=GoogleLanguageTranslatorInit'></script>
 <script type='text/javascript'>
@@ -127,7 +123,6 @@
 </script>
 
 <!-- jquery -->
-<script src="/js/vendor/jquery-3.5.1.min.js"></script>
 
 <!-- Angular Js -->
 <script src="{{ asset('libs/angularjs/angular.js') }}"></script>
@@ -141,8 +136,40 @@
 <script src="https://cdn.tutorialjinni.com/jquery-toast-plugin/1.3.2/jquery.toast.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
-<script>
-</script>
+@stack('scripts')
 
+<script>
+    app.controller('headerPartial', function ($rootScope, $scope) {
+        $scope.search = function () {
+            let keyword = $("input#search-form").val();
+            if(! keyword) {
+                alert('Vui lòng nhập từ khóa');
+                return;
+            }
+
+            location.href = '/tim-kiem?keyword=' + (keyword);
+        }
+
+        //
+        // // click button search
+        // $("button.btn-search").on("click", function() {
+        //     var keyword = $(this).parents('form').find('.keyword').val();
+        //
+        //     if(! $scope.search.category_id) {
+        //         $scope.search.category_id = 'all';
+        //     }
+        //
+        //     if (keyword.length == 0) {
+        //         return;
+        //     }
+        //
+        //     location.href = '/tim-kiem?keyword=' + (keyword) + '&category_id=' + $scope.search.category_id;
+        // });
+
+    });
+
+
+
+</script>
 </body>
 </html>

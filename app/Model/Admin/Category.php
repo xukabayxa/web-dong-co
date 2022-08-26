@@ -2,6 +2,7 @@
 
 namespace App\Model\Admin;
 
+use App\Services\CategoryService;
 use Auth;
 use App\Model\BaseModel;
 use App\Model\Common\User;
@@ -192,5 +193,17 @@ class Category extends BaseModel
             ->firstOrFail();
     }
 
+    public static function getAllCategory(){
+        $categoryService = new CategoryService();
+        $categories = self::parent()->with('products')->orderBy('sort_order')->get();
 
+        // danh mục sản phẩm
+        $categories = $categories->map(function ($cate) use ($categoryService) {
+            // áp dụng cho category cha
+            $cate->child_categories = $categoryService->getChildCategory($cate, 1);
+            return $cate;
+        });
+
+        return $categories;
+    }
 }

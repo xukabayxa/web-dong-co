@@ -131,9 +131,16 @@
                     </li>
 
                     <li class="nav-item">
-                        <a href="{{ route('attributes.index') }}" class="nav-link {{ Request::routeIs('attributes.index') ? 'active' : '' }}">
+                        <a href="{{ route('Project.index') }}" class="nav-link {{ Request::routeIs('Project.index') ? 'active' : '' }}">
                             <i class="far fas  fa-angle-right nav-icon"></i>
-                            <p>Danh mục thuộc tính sản phẩm</p>
+                            <p>Danh mục dự án</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="{{ route('partners.index') }}" class="nav-link {{ Request::routeIs('partners.index') ? 'active' : '' }}">
+                            <i class="far fas  fa-angle-right nav-icon"></i>
+                            <p>Danh mục đối tác</p>
                         </a>
                     </li>
 
@@ -152,15 +159,15 @@
                     </li>
                 </ul>
             </li>
-            <li class="nav-item has-treeview">
-                <a href="{{route('orders.index')}}" class="nav-link">
-                    <i class="nav-icon fa fa-file-invoice-dollar"></i>
+{{--            <li class="nav-item has-treeview">--}}
+{{--                <a href="{{route('orders.index')}}" class="nav-link">--}}
+{{--                    <i class="nav-icon fa fa-file-invoice-dollar"></i>--}}
 
-                    <p>
-                        Quản lý đơn hàng
-                    </p>
-                </a>
-            </li>
+{{--                    <p>--}}
+{{--                        Quản lý đơn hàng--}}
+{{--                    </p>--}}
+{{--                </a>--}}
+{{--            </li>--}}
 
             <li class="nav-item has-treeview  {{ request()->is('admin/blocks') || request()->is('admin/blocks/*') ? 'menu-open' : '' }} ">
                 <a href="#" class="nav-link">

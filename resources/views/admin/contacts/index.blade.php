@@ -95,7 +95,7 @@ Quản lý liên hệ
             {data: 'email', title: 'Email'},
             {data: 'phone_number', title: 'Số điện thoại'},
             {data: 'content', title: 'Nội dung'},
-            {data: 'created_at', title: 'Ngày tạo'},
+            {data: 'created_at', title: 'Ngày gửi'},
             {data: 'action', orderable: false, title: "Hành động"}
         ],
         search_columns: [

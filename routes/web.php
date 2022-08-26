@@ -58,6 +58,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
         Route::post('/add-category-special', 'Admin\ProductController@addToCategorySpecial')->name('Product.add.category.special');
 
         Route::get('/act-delete', 'Admin\ProductController@actDelete')->name('products.delete.multi');
+        Route::post('/{id}/deleteFile', 'Admin\ProductController@deleteFile')->name('products.deleteFile');
     });
 
     Route::group(['prefix' => 'post-categories'], function() {
@@ -149,6 +150,34 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
         Route::get('/{id}/delete', 'Admin\OriginController@delete')->name('origins.delete');
         Route::get('/{id}/getDataForEdit', 'Admin\OriginController@getDataForEdit');
         Route::get('/exportExcel','Admin\OriginController@exportExcel')->name('origins.exportExcel');
+    });
+
+    // Dự án
+    Route::group(['prefix' => 'projects'], function () {
+        Route::get('/', 'Admin\ProjectController@index')->name('Project.index');
+        Route::get('/searchData', 'Admin\ProjectController@searchData')->name('Project.searchData');
+        Route::get('/{id}/show', 'Admin\ProjectController@show')->name('Project.show');
+        Route::get('/{id}/getData', 'Admin\ProjectController@getData')->name('Project.getData');
+        Route::get('/create', 'Admin\ProjectController@create')->name('Project.create')->middleware('checkPermission:Thêm bài viết');
+        Route::post('/', 'Admin\ProjectController@store')->name('Project.store')->middleware('checkPermission:Thêm bài viết');
+        Route::post('/{id}/update', 'Admin\ProjectController@update')->name('Project.update')->middleware('checkPermission:Sửa bài viết');
+        Route::get('/{id}/edit', 'Admin\ProjectController@edit')->name('Project.edit')->middleware('checkPermission:Sửa bài viết');
+        Route::get('/{id}/delete', 'Admin\ProjectController@delete')->name('Project.delete')->middleware('checkPermission:Xóa bài viết');
+        Route::get('/exportExcel','Admin\ProjectController@exportExcel')->name('Project.exportExcel');
+        Route::post('/add-to-category-special','Admin\ProjectController@addToCategorySpecial')->name('Project.add.category.special');
+    });
+
+    // đối tác
+    Route::group(['prefix' => 'partners'], function () {
+        Route::get('/', 'Admin\PartnerController@index')->name('partners.index');
+        Route::get('/searchData', 'Admin\PartnerController@searchData')->name('partners.searchData');
+        Route::get('/{id}/show', 'Admin\PartnerController@show')->name('partners.show');
+        Route::get('/create', 'Admin\PartnerController@create')->name('partners.create');
+        Route::post('/', 'Admin\PartnerController@store')->name('partners.store');
+        Route::post('/{id}/update', 'Admin\PartnerController@update')->name('partners.update');
+        Route::get('/{id}/delete', 'Admin\PartnerController@delete')->name('partners.delete');
+        Route::get('/{id}/getDataForEdit', 'Admin\PartnerController@getDataForEdit');
+        Route::get('/exportExcel','Admin\PartnerController@exportExcel')->name('partners.exportExcel');
     });
 
     // Danh mục đặc biệt

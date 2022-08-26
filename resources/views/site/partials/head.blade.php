@@ -35,6 +35,7 @@
     <link rel='stylesheet' id='woocommerce-general-css' href='css/woocommerce.css' type='text/css' media='all'/>
     <link rel='stylesheet' id='bootstrap-css' href='/site/css/bootstrap.min.css' type='text/css' media='all'/>
     <link rel='stylesheet' id='font-awesome-css' href='/site/css/font-awesome.min.css' type='text/css' media='all'/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel='stylesheet' id='slick-css' href='/site/css/slick.min.css' type='text/css' media='all'/>
     <link rel='stylesheet' id='jquery-ui-base-css' href='/site/css/jquery-ui.css' type='text/css' media='all'/>
     <link rel='stylesheet' id='xzoom-css' href='/site/css/xzoom.css' type='text/css' media='all'/>
@@ -42,6 +43,7 @@
     <link rel='stylesheet' id='rt-media-css' href='/site/css/media.css' type='text/css' media='all'/>
     <link rel='stylesheet' id='rt-woo-css' href='/site/css/woo.css' type='text/css' media='all'/>
     <link rel='stylesheet' id='rt-main-css' href='/site/css/main.css' type='text/css' media='all'/>
+    <link rel='stylesheet' id='rt-main-css' href='/site/css/loading.css' type='text/css' media='all'/>
     <style id='rt-main-inline-css' type='text/css'>
         body {
         }

@@ -1,36 +1,30 @@
 @if ($paginator->hasPages())
-    <div class="paginatoin-area">
-        <div class="row">
-            <div class="col-lg-12 col-md-12">
-                <ul class="pagination-box">
-                    @if (!$paginator->onFirstPage())
-                        <li>
-                            <a class="Next load-product" href="{{ $paginator->previousPageUrl() }}" ng-click="loadProducts()">Trang trước</a>
-                        </li>
-                    @endif
+    <nav class="woocommerce-pagination">
+        <ul class="page-numbers">
+            @if (!$paginator->onFirstPage())
+                <li><a class="prev page-numbers" href="{{ $paginator->previousPageUrl() }}">←</a></li>
+            @endif
 
-                        @foreach ($elements as $element)
-                            {{-- Array Of Links --}}
-                            @if (is_array($element))
-                                @foreach ($element as $page => $url)
-                                    @if ($page == $paginator->currentPage())
-
-                                        <li class="active"><a href="#">{{ $page }}</a></li>
-
-                                    @else
-                                        <li><a class="load-product" href="{{ $url }}" ng-click="loadProducts()">{{ $page }}</a></li>
-                                    @endif
-                                @endforeach
-                            @endif
-                        @endforeach
-
-                        @if ($paginator->hasMorePages())
-                            <li>
-                                <a class="Next load-product" href="{{ $paginator->nextPageUrl() }}" ng-click="loadProducts()">Trang sau</a>
-                            </li>
+            @foreach ($elements as $element)
+                {{-- Array Of Links --}}
+                @if (is_array($element))
+                    @foreach ($element as $page => $url)
+                        @if ($page == $paginator->currentPage())
+                            <li><span class="page-numbers current">{{ $page }}</span></li>
+                        @else
+                            <li><a class="page-numbers" href="{{ $url }}">{{ $page }}</a></li>
                         @endif
-                </ul>
-            </div>
-        </div>
-    </div>
+                    @endforeach
+                @endif
+            @endforeach
+
+            @if ($paginator->hasMorePages())
+
+                <li><a class="next page-numbers" href="{{ $paginator->nextPageUrl() }}">→</a></li>
+
+            @endif
+        </ul>
+    </nav>
+
 @endif
+
