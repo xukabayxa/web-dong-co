@@ -20,7 +20,7 @@
                             <div class="box-pro">
                                 @foreach($category->child_categories as $childCategory)
                                     <h2 class="headings">
-                                        <a href="http://sonhaiphat.vn/danh-muc/thiet-bi-truyen-dong/dong-co-dien-thiet-bi-truyen-dong/">
+                                        <a href="{{route('front.product-category', ['slug' => $category->slug, 'childSlug' => $childCategory->slug])}}">
                                             {{$childCategory->name}} </a>
                                     </h2>
                                     <ul class="woocommerce product-style ">
