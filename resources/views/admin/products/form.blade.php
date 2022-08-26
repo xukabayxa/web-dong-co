@@ -239,14 +239,14 @@
             <div class="form-group">
                 <label>File đính kèm: </label>
                 <div class="d-flex">
-                    <div class="document-item" ng-repeat="d in form.documents">
+                    <div class="document-item" ng-repeat="d in form.documents" style="margin-right: 20px">
                         <a href="javascript:void(0)" class="remove" ng-click="deleteFile(d)">
                             <i class="fa fa-times"></i>
                         </a>
                         <a href="<% d %>" target="_blank" class="fa fa-file-pdf-o fa-3x"></a>
                         <a href="<% d %>" target="_blank" class="mt-1 text-ellipsis" title="<% getFileName(d) %>"><% getFileName(d) %></a>
                     </div>
-                    <div class="document-item" ng-repeat="d in addition_attachments"
+                    <div class="document-item" ng-repeat="d in addition_attachments" style="margin-right: 20px"
                          title="<% d.name ? d.name : 'Chọn file' %>"
                          ng-class="{'error': errors && errors['attachments.' + $index]}">
                         <a href="javascript:void(0)" class="remove" ng-click="removeFile($index)"><i
