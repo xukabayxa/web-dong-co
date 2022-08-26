@@ -59,7 +59,7 @@
                                     </form>
                                 </div>
 
-                                <div class="hidden-lg col-md-2 col-sm-2 col-xs-2">
+                                <div class="hidden-lg col-md-2 col-sm-2 col-xs-2 mobile-menu">
                                     <div id="menu-toggle" class="mobile-menu-primary">
                                         <span id="">Menu</span>
                                         <button id="" type="button" class="rt-navbar-toggle hidden-lg">
