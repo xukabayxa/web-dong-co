@@ -30,17 +30,17 @@
                                 <div class="primary-menu-container visible-lg col-lg-9">
                                     <ul id="primary-menu" class="primary-menu menu clearfix">
                                         <li id="menu-item-396"
-                                            class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-396">
+                                            class="menu-item menu-item-type-custom menu-item-object-custom {{ Request::routeIs('front.home_page') ? 'current_page_item' : '' }} menu-item-home menu-item-396">
                                             <a href="{{route('front.home_page')}}">Trang chủ</a></li>
                                         <li id="menu-item-397"
-                                            class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-397">
+                                            class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-397 {{ Request::routeIs('front.product-list') ? 'current_page_item' : '' }}">
                                             <a href="{{route('front.product-list')}}">Sản phẩm</a></li>
                                         <li id="menu-item-127"
-                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-127">
+                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-127 {{ Request::routeIs('front.about') ? 'current_page_item' : '' }}">
                                             <a href="{{route('front.about')}}">GIỚI THIỆU</a></li>
                                         <li id="menu-item-128"
-                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-128">
-                                            <a href="{{route('front.contact')}}/">Liên hệ</a></li>
+                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-128 {{ Request::routeIs('front.contact') ? 'current_page_item' : '' }}">
+                                            <a href="{{route('front.contact')}}">Liên hệ</a></li>
                                     </ul>
                                 </div>
 
