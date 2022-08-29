@@ -108,6 +108,7 @@ class UserController extends Controller
 			$object->email = $request->email;
 			$object->password = bcrypt($request->password);
 			$object->status = $request->status;
+			$object->phone_number = $request->phone_number;
 			$object->type = 2;
 
 			$object->save();
@@ -154,6 +155,7 @@ class UserController extends Controller
 			$object->email = $request->email;
 			if ($request->password != null) $object->password = bcrypt($request->password);
 			$object->status = $request->status;
+			$object->phone_number = $request->phone_number;
 			$object->type = 2;
 			$object->save();
 

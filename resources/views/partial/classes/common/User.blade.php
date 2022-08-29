@@ -26,6 +26,7 @@
             let data = {
                 name: this.name,
                 email: this.email,
+                phone_number: this.phone_number,
                 password: this.password,
                 password_confirm: this.password_confirm,
                 roles: this.roles,

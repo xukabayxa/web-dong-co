@@ -26,25 +26,28 @@
                                 src='/site/image/support.png'/>
         <div id="supporter-info" class="gd_support_3">
             <?php
-                $config = \App\Model\Admin\Config::query()->first();
+            $users = \App\Model\Common\User::role('Nhân viên tư vấn')->get();
             ?>
-            <div id="support-1" class="supporter">
-                <div class="info">
-                    <div class="support-rt"><span
-                            class="name-support">Hỗ trợ</span><span
-                            class="phone-support phone-support_2 phone_support_3"><a
-                                href=tel:{{$config->hotline}}><i class="fa fa-phone-square"
-                                                            aria-hidden="true"></i>{{$config->hotline}}</a></span>
-                        <div class='socical'><a href="">
-                                <img src="http://sonhaiphat.vn/wp-content/themes/RT/assets/css/images/icon-sky.png"
-                                     style="border: none; width:auto; height: 24px;" width="100"
-                                     height="24" alt="My status"/>
-                            </a>
+            @foreach($users as $user)
+                <div id="support-1" class="supporter">
+                    <div class="info">
+                        <div class="support-rt"><span
+                                class="name-support">{{$user->name}}</span><span
+                                class="phone-support phone-support_2 phone_support_3"><a
+                                    href=tel:{{$user->phone_number}}><i class="fa fa-phone-square"
+                                                                     aria-hidden="true"></i>{{$user->phone_number}}</a></span>
+                            <div class='socical'><a href="">
+                                    <img src="http://sonhaiphat.vn/wp-content/themes/RT/assets/css/images/icon-sky.png"
+                                         style="border: none; width:auto; height: 24px;" width="100"
+                                         height="24" alt="My status"/>
+                                </a>
+                            </div>
                         </div>
+{{--                        <span class="mail-support"><i class="fa fa-envelope" aria-hidden="true"></i>{{$config->email}}</span>--}}
                     </div>
-                    <span class="mail-support"><i class="fa fa-envelope" aria-hidden="true"></i>{{$config->email}}</span>
-                </div>
-            </div>  <!-- end supporter -->
+                </div>  <!-- end supporter -->
+
+            @endforeach
         </div> <!-- end supporter-info -->
     </div>
 </aside>

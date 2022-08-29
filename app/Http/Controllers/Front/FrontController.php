@@ -16,6 +16,7 @@ use App\Model\Admin\Project;
 use App\Model\Admin\Store;
 use App\Model\Admin\Tag;
 use App\Model\Admin\Tagable;
+use App\Model\Common\User;
 use App\Services\CategoryService;
 use Illuminate\Http\Request;
 use Jenssegers\Agent\Agent;

@@ -26,37 +26,47 @@
 							</span>
 						</div>
 					</div>
-					<div class="col-md-6">
-						<div class="form-group">
-							<label class="form-label">Mật khẩu</label>
-							<span class="text-danger">(*)</span>
-							<div class="input-group mb-0">
-								<input class="form-control" type="password" ng-model="form.password">
-								<div class="input-group-append">
-									<button class="btn btn-outline-secondary show-password" type="button"><i class="fa fa-eye muted"></i></button>
-								</div>
-							</div>
-							<span class="invalid-feedback d-block" role="alert">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="form-label">SĐT</label>
+                            <input class="form-control" type="text" ng-model="form.phone_number">
+                        </div>
+                    </div>
+
+
+				</div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="form-label">Mật khẩu</label>
+                            <span class="text-danger">(*)</span>
+                            <div class="input-group mb-0">
+                                <input class="form-control" type="password" ng-model="form.password">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary show-password" type="button"><i class="fa fa-eye muted"></i></button>
+                                </div>
+                            </div>
+                            <span class="invalid-feedback d-block" role="alert">
 								<strong><% errors.password[0] %></strong>
 							</span>
-						</div>
-					</div>
-					<div class="col-md-6">
-						<div class="form-group">
-							<label class="form-label">Xác nhận mật khẩu</label>
-							<span class="text-danger">(*)</span>
-							<div class="input-group mb-0">
-								<input class="form-control" type="password" ng-model="form.password_confirm">
-								<div class="input-group-append">
-									<button class="btn btn-outline-secondary show-password" type="button"><i class="fa fa-eye muted"></i></button>
-								</div>
-							</div>
-							<span class="invalid-feedback d-block" role="alert">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="form-label">Xác nhận mật khẩu</label>
+                            <span class="text-danger">(*)</span>
+                            <div class="input-group mb-0">
+                                <input class="form-control" type="password" ng-model="form.password_confirm">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary show-password" type="button"><i class="fa fa-eye muted"></i></button>
+                                </div>
+                            </div>
+                            <span class="invalid-feedback d-block" role="alert">
 								<strong><% errors.password_confirm[0] %></strong>
 							</span>
-						</div>
-					</div>
-				</div>
+                        </div>
+                    </div>
+                </div>
 			</div>
 		</div>
 
