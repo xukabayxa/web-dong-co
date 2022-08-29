@@ -74,7 +74,7 @@ ul.woocommerce {
     clear: both;
 }
 .content-products .price del,
-.content-products .price ins{   
+.content-products .price ins{
     text-decoration: none;
 }
 .content-products .price ins span{
@@ -103,7 +103,7 @@ ul.woocommerce {
     color: #333;
     display: block;
     line-height: 25px;
-    height: 25px;
+    height: 45px;
     font-weight: 500;
     overflow: hidden;
     font-size: 14px;
@@ -166,7 +166,7 @@ ul.woocommerce {
     margin-top: 0 !important;
 }
 
-.woocommerce li.product .rt_add_to_cart a.view_product 
+.woocommerce li.product .rt_add_to_cart a.view_product
 {    background: #473f9c;
     float: none;
 }
@@ -344,7 +344,7 @@ ul.woocommerce {
 }
 
 .rt_woocommerce-product-gallery .woocommerce-product-gallery__image {
-    
+
 }
 .rt_woocommerce-product-gallery .rt-woocommerce-product-gallery-nav .woocommerce-product-gallery__image {
     margin: 0;

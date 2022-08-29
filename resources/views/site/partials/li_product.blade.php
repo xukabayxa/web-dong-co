@@ -3,7 +3,7 @@
         <div class='rt-thumb'>
             <a class='rt-tooltip'
                data-tooltip=''
-               href=''>
+               href='{{route('front.product-detail', $product->slug)}}'>
                 <img width="300" height="225" src="{{$product->image->path ?? '/asset_front/img/shop/img4.jpg'}}"
                      class="attachment-shop_catalog size-shop_catalog wp-post-image">
 

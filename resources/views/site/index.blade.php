@@ -10,7 +10,6 @@
 
                 <div id="primary" class="content-area">
                     <main id="main" class="site-main" role="main">
-
                         @if(@$block20)
                             <div class="page_home">
                                 <h3 class="heading" style="margin: 0;">giới thiệu</h3>
