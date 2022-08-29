@@ -11,18 +11,18 @@
     <!-- This site is optimized with the Yoast SEO plugin v7.1 - https://yoast.com/wordpress/plugins/seo/ -->
     <meta property="og:locale" content="en_US"/>
     <meta property="og:type" content="website"/>
-    <meta property="og:title" content="CÔNG TY TNHH THIẾT BỊ SƠN HẢI PHÁT"/>
-    <meta property="og:site_name" content="CÔNG TY TNHH THIẾT BỊ SƠN HẢI PHÁT"/>
+    <meta property="og:title" content=""/>
+    <meta property="og:site_name" content=""/>
     <meta name="twitter:card" content="summary"/>
-    <meta name="twitter:title" content="CÔNG TY TNHH THIẾT BỊ SƠN HẢI PHÁT"/>
+    <meta name="twitter:title" content=""/>
 
     <!-- / Yoast SEO plugin. -->
     <link rel='dns-prefetch' href='//translate.google.com'/>
     <link rel='dns-prefetch' href='//code.jquery.com'/>
-    <link rel="alternate" type="application/rss+xml" title="CÔNG TY TNHH THIẾT BỊ SƠN HẢI PHÁT &raquo; Feed"
-          href="http://sonhaiphat.vn/feed/"/>
-    <link rel="alternate" type="application/rss+xml" title="CÔNG TY TNHH THIẾT BỊ SƠN HẢI PHÁT &raquo; Comments Feed"
-          href="http://sonhaiphat.vn/comments/feed/"/>
+    <link rel="alternate" type="application/rss+xml" title=""
+          href=""/>
+    <link rel="alternate" type="application/rss+xml" title=""
+          href=""/>
     <link rel='stylesheet' id='support-css-css' href='/site/css/support.css' type='text/css' media='all'/>
     <link rel='stylesheet' id='rt-blog-shortcode-css' href='/site/css/rt-blog-shortcode.css' type='text/css' media='all'/>
     <link rel='stylesheet' id='contact-form-7-css' href='/site/css/styles.css' type='text/css' media='all'/>
