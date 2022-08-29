@@ -49,17 +49,17 @@
         }
 
         .widget-title {
-            background-color: #03add8;
+            background-color: #05559F;
         }
 
         .site-main .heading {
-            background-color: #03add8;
+            background-color: #05559F;
             background-repeat: no-repeat;
             background-position: left center;
         }
 
         .site-footer {
-            background-color: #03add8;
+            background-color: #05559F;
             background-repeat: no-repeat;
             background-position: center center;
         }
@@ -71,7 +71,7 @@
         }
 
         .site-footer > .container {
-            background-color: #03add8;
+            background-color: #05559F;
             background-repeat: no-repeat;
             background-position: center center;
         }
