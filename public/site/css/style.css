@@ -3334,3 +3334,38 @@ a.single-language[title="Zulu"] span.size24 {
         margin-top: 15px;
     }
 }
+
+.border-bm-1 {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo-header {
+    max-width: 170px;
+    float: left;
+  }
+header-main-text {
+    width: calc(100% - 135px);
+    float: right;
+    padding-left: 25px;
+}
+.site-text {
+    width: 100%;
+    text-align: center;
+}
+h1.company-name {
+    font-size: 26px;
+    font-weight: 700;
+    color: #05559F;
+    line-height: 42px;
+    margin: 0;
+}
+h2.slogan {
+    font-size: 18px;
+    color: #FD7F26;
+    line-height: 22px;
+    font-weight: 700;
+  }
+h3.header-hot-line {
+    color: #FD7F26;
+    font-weight: 700;
+}

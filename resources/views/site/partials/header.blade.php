@@ -1,80 +1,89 @@
-<header class="site-header" role="banner" ng-controller="headerPartial">
-    <div class="rt-header">
+<!--  Header Start -->
+<header class="header" ng-controller="headerPartial">
+    <!-- haeader Mid Start -->
+    <div class="haeader-mid-area bg-white border-bm-1 visible-lg ">
         <div class="container">
-{{--            <div id="glt_widget-2" class="widget widget_glt_widget">--}}
-{{--                <div id="flags" class="size22">--}}
-{{--                    <ul id="sortable" class="ui-sortable" style="float:left">--}}
-{{--                        <li id='English'><a title='English' class='notranslate flag en united-states'></a></li>--}}
-{{--                        <li id='Vietnamese'><a title='Vietnamese' class='notranslate flag vi Vietnamese'></a></li>--}}
-{{--                    </ul>--}}
-{{--                </div>--}}
-{{--                <div id="google_language_translator" class="default-language-vi"></div>--}}
-{{--            </div>--}}
+            <div class="row align-items-center">
+                <div class="logo-header">
+                    <div class="logo-area">
+                        <a href="{{route('front.home_page')}}"><img src="{{$config->image->path ?? "/site/assets/images/logo/logo.png"}}" alt="{{$config->web_title}}"></a>
+                    </div>
+                </div>
+                <div class="header-main-text">
+                    <div class="site-text">
+                        <h1 class="company-name">CÔNG TY TNHH ĐẦU TƯ THƯƠNG MẠI VÀ SẢN XUẤT TRANG LINH</h1>
+                        <h2 class="slogan">NHÀ NHẬP KHẨU & PHÂN PHỐI ỐNG TUY Ô THUỶ LỰC HÀNG ĐẦU VIỆT NAM</h2>
+                        <h3 class="header-hot-line">Hotline: {{ $config->hotline }}</h3>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="site-branding">
+    <!-- haeader Mid End -->
+
+    <!-- haeader bottom Start -->
+    <div class="haeader-bottom-area header-sticky">
         <div class="container">
-            <div class="row">
-                <div class="header-layout">
-                    <a href="{{route('front.home_page')}}" title="{{$config->web_title}}">
-                        <img src="/site/image/logo.png"
-                             alt="{{$config->web_title}}">
-                    </a>
-                    <h1 class="site-title hidden"><a href="http://sonhaiphat.vn/">{{$config->web_title}}</a></h1>
-                </div>
-                <div class="nav-layout">
-                    <nav id="site-navigation" class="main-navigation">
-                        <div class="container_class">
-                            <div class="row">
-
-                                <div class="primary-menu-container visible-lg col-lg-9">
-                                    <ul id="primary-menu" class="primary-menu menu clearfix">
-                                        <li id="menu-item-396"
-                                            class="menu-item menu-item-type-custom menu-item-object-custom {{ Request::routeIs('front.home_page') ? 'current_page_item' : '' }} menu-item-home menu-item-396">
-                                            <a href="{{route('front.home_page')}}">Trang chủ</a></li>
-                                        <li id="menu-item-397"
-                                            class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-397 {{ Request::routeIs('front.product-list') ? 'current_page_item' : '' }}">
-                                            <a href="{{route('front.product-list')}}">Sản phẩm</a></li>
-                                        <li id="menu-item-127"
-                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-127 {{ Request::routeIs('front.about') ? 'current_page_item' : '' }}">
-                                            <a href="{{route('front.about')}}">GIỚI THIỆU</a></li>
-                                        <li id="menu-item-128"
-                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-128 {{ Request::routeIs('front.contact') ? 'current_page_item' : '' }}">
-                                            <a href="{{route('front.contact')}}">Liên hệ</a></li>
+            <div class="row align-items-left">
+                <div class="col-lg-12 visible-lg visible-md">
+                    <div class="main-menu-area green_text">
+                        <!--  Start Mainmenu Nav-->
+                        <nav class="main-navigation">
+                            <ul>
+                                <li><a href={{route('front.home_page')}}>Trang chủ</a></li>
+                                <li><a href="#">Sản phẩm <i class="fa fa-angle-down"></i></a>
+                                    <ul class="mega-menu">
+                                        @foreach($productCategories as $category)
+                                            <li>
+                                                <a href="{{route('front.product-category', $category->slug)}}">{{$category->name}}</a>
+                                                <ul>
+                                                    @foreach($category->childs as $categoryChild)
+                                                        <li>
+                                                            <a href="{{route('front.product-category', $categoryChild->slug)}}">{{$categoryChild->name}}</a>
+                                                        </li>
+                                                    @endforeach
+                                                </ul>
+                                            </li>
+                                        @endforeach
                                     </ul>
-                                </div>
-
-                                <div class="header-search col-lg-3 col-md-10 col-sm-10 col-xs-10">
+                                </li>
 
 
-                                    <form role="search" method="get" class="search-form">
-                                        <label for="search-form">
-                                            <span class="screen-reader-text">Tìm kiếm:</span>
-                                        </label>
-                                        <input type="search" id="search-form" class="search-field"
-                                               value="" name="s" />
-                                        <button type="submit" class="search-submit" ng-click="search()"><i class="fa fa-search"
-                                                                                       aria-hidden="true"></i><span
-                                                class="screen-reader-text">Search</span></button>
-                                    </form>
-                                </div>
 
-                                <div class="hidden-lg col-md-2 col-sm-2 col-xs-2 mobile-menu">
-                                    <div id="menu-toggle" class="mobile-menu-primary">
-                                        <span id="">Menu</span>
-                                        <button id="" type="button" class="rt-navbar-toggle hidden-lg">
-                                            <span class="screen-reader-text sr-only">Toggle navigation</span>
-                                            <span class="icon-bar bar1"></span>
-                                            <span class="icon-bar bar2"></span>
-                                            <span class="icon-bar bar3"></span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div><!-- .row -->
-                        </div><!-- .container -->
-                    </nav><!-- #site-navigation -->
+                                <li><a href="#">Tin tức <i class="fa fa-angle-down"></i></a>
+                                    <ul class="sub-menu">
+                                        @foreach($postCategories as $postCategory)
+                                        <li><a href="{{route('front.post-detail', $postCategory->slug)}}">{{$postCategory->name}}</a></li>
+                                        @endforeach
+                                    </ul>
+                                </li>
+
+                                <li><a href={{route('front.about')}}>Giới thiệu</a></li>
+                                <li><a href="{{route('front.contact')}}">Liên hệ</a></li>
+                            </ul>
+                        </nav>
+
+                    </div>
                 </div>
-            </div><!-- .row -->
-        </div><!-- .container -->
-    </div><!-- .site-branding -->
-</header><!-- #masthead -->
+
+                <div class="mobile-header-comtent visible-xs">
+                    <div class="logo"><a href="{{ route('front.home_page') }}"><img src="{{$config->image->path ?? "/site/assets/images/logo/logo.png"}}" alt=""></a></div>
+                    <div class="hidden-lg mobile-menu">
+                        <div id="menu-toggle" class="mobile-menu-primary">
+                            <span id="">Menu</span>
+                            <button id="" type="button" class="rt-navbar-toggle hidden-lg">
+                                <span class="screen-reader-text sr-only">Toggle navigation</span>
+                                <span class="icon-bar bar1"></span>
+                                <span class="icon-bar bar2"></span>
+                                <span class="icon-bar bar3"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- haeader bottom End -->
+</header>
+<!--  Header Start -->

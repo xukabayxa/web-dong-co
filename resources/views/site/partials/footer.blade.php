@@ -55,11 +55,6 @@
                 <div id="custom_html-2" class="widget_text widget widget_custom_html"><h3 class="widget-title">Bản
                         đồ</h3>
                     <div class="textwidget custom-html-widget">
-{{--                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3725.9857528292723!2d105.84974771493133!3d20.95308728603941!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ad2c57fecef9%3A0x20667af1fec88fb3!2zQ8OUTkcgVFkgVE5ISCBUSEnhur5UIELhu4ogU8agTiBI4bqiSSBQSMOBVA!5e0!3m2!1svi!2s!4v1588582821895!5m2!1svi!2s"--}}
-{{--                                width="100%" height="200" frameborder="0" style="border:0;" allowfullscreen=""--}}
-{{--                                aria-hidden="false" tabindex="0">--}}
-
-{{--                        </iframe>--}}
 
                         <iframe src='https://maps.google.com/maps?q={{$store->lat}},{{$store->long}}&hl=es&z=14&amp;output=embed' class='map-iframe'  width="100%" height="200" style='border:0;' allowfullscreen=''
                                 loading='lazy'></iframe>"
@@ -78,79 +73,9 @@
                                     fjs.parentNode.insertBefore(js, fjs);
                                 }(document, 'script', 'facebook-jssdk'));</script>
                         </p>
-                        <style>#cfacebook {
-                                position: fixed;
-                                bottom: 0px;
-                                right: 100px;
-                                z-index: 999999999999999;
-                                width: 250px;
-                                height: auto;
-                                box-shadow: 6px 6px 6px 10px rgba(0, 0, 0, 0.2);
-                                border-top-left-radius: 5px;
-                                border-top-right-radius: 5px;
-                                overflow: hidden;
-                            }
-
-                            #cfacebook .fchat {
-                                float: left;
-                                width: 100%;
-                                height: 270px;
-                                overflow: hidden;
-                                display: none;
-                                background-color: #fff;
-                            }
-
-                            #cfacebook .fchat .fb-page {
-                                margin-top: -130px;
-                                float: left;
-                            }
-
-                            #cfacebook a.chat_fb {
-                                float: left;
-                                padding: 0 25px;
-                                width: 250px;
-                                color: #fff;
-                                text-decoration: none;
-                                height: 40px;
-                                line-height: 40px;
-                                text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
-                                background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAqCAMAAABFoMFOAAAAWlBMV…8/UxBxQDQuFwlpqgBZBq6+P+unVY1GnDgwqbD2zGz5e1lBdwvGGPE6OgAAAABJRU5ErkJggg==);
-                                background-repeat: repeat-x;
-                                background-size: auto;
-                                background-position: 0 0;
-                                background-color: #3a5795;
-                                border: 0;
-                                border-bottom: 1px solid #133783;
-                                z-index: 9999999;
-                                margin-right: 12px;
-                                font-size: 18px;
-                            }
-
-                            #cfacebook a.chat_fb:hover {
-                                color: yellow;
-                                text-decoration: none;
-                            }</style>
-                        <p>
-                            <script>
-                                jQuery(document).ready(function () {
-                                    jQuery(".chat_fb").click(function () {
-                                        jQuery('.fchat').toggle('slow');
-                                    });
-                                });
-                            </script>
-                        </p>
-                        <div id="cfacebook">
-                            <a href="javascript:;" class="chat_fb" onclick="return:false;"><i
-                                    class="fa fa-facebook-square"></i> Chat với chúng tôi</a></p>
-                            <div class="fchat">
-                                <div class="fb-page" data-tabs="messages"
-                                     data-href="{{$config->facebook}}/" data-width="250"
-                                     data-height="400" data-small-header="false" data-adapt-container-width="true"
-                                     data-hide-cover="false" data-show-facepile="true"
-                                     data-show-posts="false"></div>
-                                </p></div>
-                            </p></div>
-                    </div>
+                    
+                       
+                        
                 </div>
             </div>
         </div><!-- .bottom-footer -->
