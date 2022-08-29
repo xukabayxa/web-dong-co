@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Traits\ResponseTrait;
 use App\Model\Admin\Banner;
+use App\Model\Admin\Block;
 use App\Model\Admin\CategorySpecial;
 use App\Model\Admin\Contact;
 use App\Model\Admin\Manufacturer;
@@ -62,7 +63,12 @@ class FrontController extends Controller
         // dự án
         $projects = Project::query()->latest()->take(4)->get();
 
-        return view('site.index', compact('categories', 'posts', 'projects'));
+        // sản phẩm ghim trang chủ
+        $products = Product::query()->where('is_pin', true)->take(4)->get();
+
+        $block20 = Block::query()->find(20);
+
+        return view('site.index', compact('categories', 'posts', 'projects', 'products', 'block20'));
     }
 
 

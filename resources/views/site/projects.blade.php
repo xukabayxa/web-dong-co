@@ -1,5 +1,6 @@
 @extends('site.layouts.master')
 @section('title')
+    <title>{{ 'Dự án tiêu biểu'  . ' - '. ucfirst($_SERVER['HTTP_HOST']) }}</title>
 @endsection
 @section('content')
     <div class="container">

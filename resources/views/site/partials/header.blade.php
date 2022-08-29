@@ -50,12 +50,7 @@
 
 
 
-                                <li><a href="#">Tin tức <i class="fa fa-angle-down"></i></a>
-                                    <ul class="sub-menu">
-                                        @foreach($postCategories as $postCategory)
-                                        <li><a href="{{route('front.post-detail', $postCategory->slug)}}">{{$postCategory->name}}</a></li>
-                                        @endforeach
-                                    </ul>
+                                <li><a href="{{route('front.post-list')}}">Tin tức</a>
                                 </li>
 
                                 <li><a href={{route('front.about')}}>Giới thiệu</a></li>

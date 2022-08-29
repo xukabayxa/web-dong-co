@@ -1,13 +1,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/png" href="http://sonhaiphat.vn/wp-content/uploads/2019/02/logo-chinh-sua.png"/>
+    <link rel="icon" type="image/png" href="/site/image/logo.png"/>
     <link rel="profile" href="http://gmpg.org/xfn/11">
     <script src="/site/js/jquery.min.js"></script>
     <script type="text/javascript" src="/site/js/w2ui.min.js"></script>
     <link rel="stylesheet" type="text/css" href="/site/css/w2ui.min.css"/>
 
-
+    @yield('title')
     <!-- This site is optimized with the Yoast SEO plugin v7.1 - https://yoast.com/wordpress/plugins/seo/ -->
     <meta property="og:locale" content="en_US"/>
     <meta property="og:type" content="website"/>
@@ -82,9 +82,92 @@
     <script type='text/javascript' src='/site/js/xzoom.js'></script>
     <link rel='https://api.w.org/' href='http://sonhaiphat.vn/wp-json/'/>
     <link rel="stylesheet" href="/site/css/counter.css" type="text/css"/>
+<style>
+    .owl-carousel .owl-nav {
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%);
+        margin: 0;
+        position: absolute;
+        margin-top: 0;
+        width: 100%;
+    }
+
+    .owl-carousel .owl-nav svg {
+        opacity: 0.3;
+        transition: opacity 0.3s;
+        position: relative;
+    }
+
+    .owl-carousel .owl-nav button:hover svg {
+        opacity: 1;
+    }
+
+    .owl-carousel .owl-nav [class*="owl-"]:hover {
+        background: transparent;
+    }
+
+    @media screen and (max-width: 575px) {
+        .owl-carousel .owl-nav {
+            top: 5%;
+        }
+
+        .owl-carousel .owl-nav svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .owl-prev,
+        .owl-next {
+            width: 15px;
+            height: 100px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            display: block !important;
+            border: 0px solid black;
+        }
+
+        .owl-prev {
+            left: -20px;
+        }
+
+        .owl-next {
+            right: -20px;
+        }
+
+        .owl-prev svg,
+        .owl-next svg {
+            transform: scale(2, 5);
+            color: #ccc;
+        }
+    }
+
+    .owl-carousel .owl-dots {
+        display: block;
+        margin-top: -20px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .owl-carousel .owl-dots .owl-dot.active {
+        /*background: #fff;*/
+    }
+
+    .owl-theme .owl-dots .owl-dot.active span,
+    .owl-theme .owl-dots .owl-dot:hover span {
+        background: #fff;
+    }
+
+</style>
+    <link rel="stylesheet" href="/libs/owl/docs/assets/owlcarousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="/libs/owl/docs/assets/owlcarousel/assets/owl.theme.default.min.css">
+
     <style type="text/css">.goog-te-gadget {
             margin-top: 2px !important;
         }
+
+
 
         p.hello {
             font-size: 12px;

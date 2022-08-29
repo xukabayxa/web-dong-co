@@ -171,6 +171,14 @@
             </select>
         </div>
 
+        <div class="form-group custom-group mb-4">
+            <label class="form-label">Ghim sản phẩm</label>
+            <select id="my-select" class="form-control custom-select" ng-model="form.is_pin">
+                <option value="2">Không ghim</option>
+                <option value="1">Ghim</option>
+            </select>
+        </div>
+
         <div class="form-group text-center">
             <div class="main-img-preview">
                 <p class="help-block-img">* Ảnh định dạng: jpg, png không quá 2MB.</p>

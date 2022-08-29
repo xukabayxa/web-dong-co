@@ -1,5 +1,6 @@
 @extends('site.layouts.master')
 @section('title')
+    <title>{{ $product->name  . ' - '. ucfirst($_SERVER['HTTP_HOST']) }}</title>
 @endsection
 @section('content')
     <div class="container">
@@ -49,6 +50,22 @@
                                         <div class="woocommerce-product-details__short-description">
                                             {!! $product->short_des !!}
                                         </div>
+                                        <br/>
+                                        <div>
+                                            <?php
+                                            $attachments = explode(',', $product->attachments);
+                                            $attachments = array_filter($attachments, function ($val){
+                                                return $val;
+                                            })
+                                            ?>
+                                            @foreach($attachments as $attachment)
+                                                <a href="{{$attachment}}"
+                                                   class="btn btn-primary btn-xs"><i class="fa fa-download"
+                                                                                     aria-hidden="true"></i> {{basename($attachment)}}</a>
+                                            @endforeach
+
+
+                                        </div>
                                     </div>
 
                                 </div><!-- .col-xs-12 -->
@@ -76,14 +93,14 @@
 
                                     {!! $product->body !!}
 
-{{--                                    <div class="rt-social"><a class="rt-link rt-facebook"--}}
-{{--                                                              id="shareBtn"--}}
-{{--                                                              target="_blank">Facebook</a>--}}
-{{--                                        <a class="rt-link rt-twitter"--}}
-{{--                                                                                             href="#"--}}
-{{--                                                                                             target="_blank">Twitter</a>--}}
+                                    {{--                                    <div class="rt-social"><a class="rt-link rt-facebook"--}}
+                                    {{--                                                              id="shareBtn"--}}
+                                    {{--                                                              target="_blank">Facebook</a>--}}
+                                    {{--                                        <a class="rt-link rt-twitter"--}}
+                                    {{--                                                                                             href="#"--}}
+                                    {{--                                                                                             target="_blank">Twitter</a>--}}
 
-{{--                                    </div>--}}
+                                    {{--                                    </div>--}}
                                 </div>
                             </div>
 
@@ -120,25 +137,29 @@
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
 
     <script>
-        document.getElementById('shareBtn').onclick = function() {
+        document.getElementById('shareBtn').onclick = function () {
             FB.ui({
                 method: 'share',
                 href: "{{route('front.product-detail', $product->slug)}}",
-            }, function(response){});
+            }, function (response) {
+            });
         }
 
-        window.fbAsyncInit = function() {
+        window.fbAsyncInit = function () {
             FB.init({
-                appId      : '514608355727133',
-                xfbml      : true,
-                version    : 'v2.3'
+                appId: '514608355727133',
+                xfbml: true,
+                version: 'v2.3'
             });
         };
 
-        (function(d, s, id){
+        (function (d, s, id) {
             var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) {return;}
-            js = d.createElement(s); js.id = id;
+            if (d.getElementById(id)) {
+                return;
+            }
+            js = d.createElement(s);
+            js.id = id;
             js.src = "//connect.facebook.net/en_US/sdk.js";
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));

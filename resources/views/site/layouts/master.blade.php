@@ -28,10 +28,13 @@
             <li id="menu-item-235"
                 class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-235">
                 <a href="{{route('front.home_page')}}">Trang chủ</a></li>
-            <li id="menu-item-169" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169"><a
-                    href="{{route('front.about')}}">Giới thiệu</a></li>
+            <li id="menu-item-235"
+                class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-235">
+                <a href="{{route('front.product-list')}}">Sản phẩm</a></li>
             <li id="menu-item-167" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-167"><a
                     href="{{route('front.post-list')}}">Tin tức</a></li>
+            <li id="menu-item-169" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-169"><a
+                    href="{{route('front.about')}}">Giới thiệu</a></li>
             <li id="menu-item-168" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-168"><a
                     href="{{route('front.contact')}}">Liên hệ</a></li>
         </ul>
@@ -47,51 +50,66 @@
       property='stylesheet'/>
 <link rel='stylesheet' id='metaslider-nivo-slider-default-css' href='/site/css/default.css' type='text/css' media='all'
       property='stylesheet'/>
-<script type='text/javascript'>
-    /* <![CDATA[ */
-    var wpcf7 = {
-        "apiSettings": {
-            "root": "http:\/\/sonhaiphat.vn\/wp-json\/contact-form-7\/v1",
-            "namespace": "contact-form-7\/v1"
-        }, "recaptcha": {"messages": {"empty": "Please verify that you are not a robot."}}
-    };
-    /* ]]> */
-</script>
 <script type='text/javascript' src='/site/js/scripts.js'></script>
 <script type='text/javascript' src='/site/js/add-to-cart.min.js'></script>
 <script type='text/javascript' src='/site/js/jquery.blockUI.min.js'></script>
 <script type='text/javascript' src='/site/js/js.cookie.min.js'></script>
-
 <script type='text/javascript' src='/site/js/woocommerce.min.js'></script>
-
 <script type='text/javascript' src='/site/js/cart-fragments.min.js'></script>
-<script type='text/javascript' src='/site/js/slick.min.js'></script>
-<script type='text/javascript' src='/site/js/owl.carousel.min.js'></script>
-
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/libs/owl/docs/assets/owlcarousel/owl.carousel.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
 <script type='text/javascript' src='/site/js/main.js'></script>
-<script type='text/javascript' src='/site/js/wp-embed.min.js'></script>
-<script type='text/javascript' src='/site/js/jquery.nivo.slider.pack.js'></script>
+
+<script>
+    $(".owl-carousel").on("initialized.owl.carousel", () => {
+        setTimeout(() => {
+            $(".owl-item.active .owl-slide-animated").addClass("is-transitioned");
+            $("section").show();
+        }, 50);
+    });
+
+    const $owlCarousel = $(".owl-carousel").owlCarousel({
+        items: 1,
+        loop: true,
+        nav: true,
+        slideSpeed: 450,
+        autoplay: true,
+        animateIn: 'fadeIn',
+        animateOut: 'fadeOut',
+        autoplayTimeout: 2000,
+        navText: [
+            '<svg class="left" width="50" height="50" viewBox="0 0 24 24" style="left: -620"><path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"/></svg>',
+            '<svg class="right" width="50" height="50" viewBox="0 0 24 24" style="right: -620"><path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z"/></svg>' /* icons from https://iconmonstr.com */
+        ]
+    });
+
+</script>
+
 <script type='text/javascript'>
-    var metaslider_12 = function ($) {
-        $('#metaslider_12').nivoSlider({
-            boxCols: 7,
-            boxRows: 5,
-            pauseTime: 3000,
-            effect: "fade",
-            controlNav: false,
-            directionNav: true,
-            pauseOnHover: true,
-            animSpeed: 600,
-            prevText: "&lt;",
-            nextText: "&gt;",
-            slices: 15,
-            manualAdvance: false
+    $(document).ready(function(){
+        $('.customer-logos').slick({
+            slidesToShow: 5,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 1500,
+            arrows: false,
+            dots: false,
+            pauseOnHover: false,
+            responsive: [{
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 4
+                }
+            }, {
+                breakpoint: 520,
+                settings: {
+                    slidesToShow: 3
+                }
+            }]
         });
-    };
-    var timer_metaslider_12 = function () {
-        var slider = !window.jQuery ? window.setTimeout(timer_metaslider_12, 100) : !jQuery.isReady ? window.setTimeout(timer_metaslider_12, 1) : metaslider_12(window.jQuery);
-    };
-    timer_metaslider_12();
+    });
 </script>
 
 <!-- jquery -->

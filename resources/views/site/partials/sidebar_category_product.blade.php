@@ -23,7 +23,7 @@
     </div>
     <div id="support_online-2" class="widget support-online-widget"><h3 class="widget-title">Hỗ trợ
             trực tuyến</h3><img class='support-img'
-                                src='http://sonhaiphat.vn/wp-content/uploads/2018/03/support.png'/>
+                                src='/site/image/support.png'/>
         <div id="supporter-info" class="gd_support_3">
             <?php
                 $config = \App\Model\Admin\Config::query()->first();

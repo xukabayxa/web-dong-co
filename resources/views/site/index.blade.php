@@ -1,5 +1,6 @@
 @extends('site.layouts.master')
 @section('title')
+    <title>{{ $config->web_title  . ' - '. ucfirst($_SERVER['HTTP_HOST']) }}</title>
 @endsection
 @section('content')
     <div class="container">
@@ -10,42 +11,64 @@
                 <div id="primary" class="content-area">
                     <main id="main" class="site-main" role="main">
 
-                        <div class="page_home">
-                            <h3 class="heading" style="margin: 0;">giới thiệu</h3>
-                            <div class="content_page">
-                                <div class="colum-left">
-                                    <img src="http://sonhaiphat.vn/wp-content/uploads/2018/03/images-3-1.jpg">
-                                </div>
-                                <div class="colum-right">
-                                    <div class="des_page">
-                                        <?php
-                                        $config = \App\Model\Admin\Config::query()->first();
-                                        ?>
-                                        <p>{{$config->web_des}}</p>
+                        @if(@$block20)
+                            <div class="page_home">
+                                <h3 class="heading" style="margin: 0;">giới thiệu</h3>
+                                <div class="content_page">
+                                    <div class="colum-left">
+                                        <img src="{{@$block20 ? ($block20->image->path ?? '') : ''}}">
                                     </div>
-                                    <a class="views-al" href="{{route('front.about')}}">Xem thêm</a>
+                                    <div class="colum-right">
+                                        <div class="des_page">
+                                           {!! printBlock(20) !!}
+                                        </div>
+                                        <a class="views-al" href="{{route('front.about')}}">Xem thêm</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="product_home">
-                            @foreach($categories as $categoryProduct)
-                                <div class="product_list">
-                                    <h2 class="heading">
-                                        <a href="{{route('front.product-category', $categoryProduct->slug)}}">
-                                            {{$categoryProduct->name}} </a>
-                                    </h2>
-                                    <div class="content_cate">
-                                        <img src='{{$categoryProduct->image->path ?? ''}}'>
-                                        @foreach($categoryProduct->child_categories as $childCategoryProduct)
-                                            <li>
-                                                <a href="{{route('front.product-category', ['slug' => $categoryProduct->slug, 'childSlug' => $childCategoryProduct->slug])}}"><i
-                                                        class="fa fa-stop"></i>{{$childCategoryProduct->name}}</a>
-                                            </li>
-                                        @endforeach
+                        @else
+                            <div class="page_home">
+                                <h3 class="heading" style="margin: 0;">giới thiệu</h3>
+                                <div class="content_page">
+                                    <div class="colum-left">
+                                        <img src="http://sonhaiphat.vn/wp-content/uploads/2018/03/images-3-1.jpg">
+                                    </div>
+                                    <div class="colum-right">
+                                        <div class="des_page">
+                                                <?php
+                                                $config = \App\Model\Admin\Config::query()->first();
+                                                ?>
+                                            <p>{{$config->web_des}}</p>
+                                        </div>
+                                        <a class="views-al" href="{{route('front.about')}}">Xem thêm</a>
                                     </div>
                                 </div>
-                            @endforeach
+                            </div>
+                        @endif
+
+                        <div class="product_home">
+                            <ul class="woocommerce product-style ">
+                                @foreach($products as $product)
+                                        @include('site.partials.li_product', ['product' => $product])
+                                @endforeach
+                            </ul>
                         </div>
+
+{{--                        @foreach($products as $product)--}}
+{{--                            <div class="product_list">--}}
+{{--                                <h2 class="heading">--}}
+{{--                                    <a href="{{route('front.product-category', $product->slug)}}">--}}
+{{--                                        {{$product->name}} </a>--}}
+{{--                                </h2>--}}
+{{--                                <div class="content_cate">--}}
+{{--                                    <img src='{{$product->image->path ?? ''}}' style="height: 150px; width: 150px">--}}
+{{--                                    <li>--}}
+{{--                                        <a href="{{route('front.product-detail', ['slug' => $product->slug])}}">{{$product->name}}</a>--}}
+{{--                                    </li>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        @endforeach--}}
+
                         <div class="clear"></div>
                         <!-- End Product -->
 
@@ -90,7 +113,7 @@
                                                 <div class="entry-description">{!! $project->short_des !!}
                                                 </div>
                                                 <a href="{{route('front.project-detail', $project->slug)}}"
-                                                   title="CUNG CẤP MÁY DÁN LƯU HÓA BĂNG TẢI COMIX &#8211; GERMANY"
+                                                   title="{{$project->title}}"
                                                    class="view-more">Xem thêm <i class="fa fa-arrow-circle-right"
                                                                                  aria-hidden="true"></i></a></div>
                                         </div>
@@ -125,7 +148,7 @@
                                                     <span>view</span></div>
                                                 <div class="entry-content"><h3 class="entry-title"><a
                                                             href="{{route('front.post-detail', $post->slug)}}"
-                                                            title="Tập đoàn Mỹ đầu tư nhà máy điện khí 5 tỷ USD">{{$post->name}}</a>
+                                                            title="{{$post->name}}">{{$post->name}}</a>
                                                     </h3>
                                                     <div class="meta"><span class="date-time"><i class="fa fa-clock-o"
                                                                                                  aria-hidden="true"></i>{{$post->created_at->format('d/m/Y H:i')}}</span>

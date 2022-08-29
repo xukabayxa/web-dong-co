@@ -117,6 +117,7 @@ class ProductController extends Controller
 			$object->origin_id = $request->origin_id;
             $object->url_custom = $request->url_custom;
             $object->state = $request->state ?? Product::CON_HANG;
+            $object->is_pin = $request->is_pin ?? Product::NOT_PIN;
 
 			$object->save();
 
@@ -180,6 +181,7 @@ class ProductController extends Controller
 			$object->origin_id = $request->origin_id;
             $object->url_custom = $request->url_custom;
             $object->state = $request->state ?? Product::CON_HANG;
+            $object->is_pin = $request->is_pin ?? Product::NOT_PIN;
 
 			$object->save();
 
