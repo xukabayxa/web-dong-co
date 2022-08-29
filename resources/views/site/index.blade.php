@@ -94,7 +94,7 @@
                                              class="element hentry post-item fusion-one-fourth fusion-spacing-yes fusion-layout-column  post-11082 post type-post status-publish format-standard has-post-thumbnail category-du-an-tieu-bieu tag-may-dan-luu-hoa-bang-tai tag-may-dan-luu-hoa-bang-tai-comix tag-may-dan-noi-bang-tai-comix">
                                         <div class="post-inner">
                                             <div class="entry-thumb"><a
-                                                    href=""
+                                                    href="{{route('front.project-detail', $project->slug)}}"
                                                     title="{{$project->title}}"><img
                                                         width="1000" height="750"
                                                         src="{{$project->image->path ?? ''}}"
