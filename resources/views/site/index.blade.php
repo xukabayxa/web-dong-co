@@ -171,7 +171,7 @@
                         </h2>
                         <div class="list-news">
                             <div class="style-blog-3 rt-shortcodes rt-blog-shortcode" style="text-align: center">
-                                <img src="/img/chung-chi.png" style="height: 550px">
+                                <a href="/img/chung-chi.png" target="_blank"><img src="/img/chung-chi.png" style="height: 550px"></a>
 
                             </div>
                         </div>
