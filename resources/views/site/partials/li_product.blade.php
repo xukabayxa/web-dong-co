@@ -9,8 +9,14 @@
 
             </a>
         </div>
+        <style>
+            .product-title-li {
+                text-transform: uppercase;
+                font-weight: bold;
+            }
+        </style>
         <div class="content-products">
-            <h2 class="rt_woocommerce-loop-product__title"><a
+            <h2 class="rt_woocommerce-loop-product__title product-title-li"><a
                     href="{{route('front.product-detail', $product->slug)}}">{{$product->name}}</a></h2>
         </div>
     </div>

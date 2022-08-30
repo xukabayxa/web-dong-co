@@ -104,10 +104,10 @@ ul.woocommerce {
     display: block;
     line-height: 25px;
     height: 45px;
-    font-weight: 500;
     overflow: hidden;
     font-size: 14px;
-    text-transform: capitalize;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 
 .woocommerce li.product .rt-thumb img {

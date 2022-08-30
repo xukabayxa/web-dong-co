@@ -41,7 +41,7 @@
     <link rel='stylesheet' id='xzoom-css' href='/site/css/xzoom.css' type='text/css' media='all'/>
     <link rel='stylesheet' id='rt-widget-css' href='/site/css/widget.css' type='text/css' media='all'/>
     <link rel='stylesheet' id='rt-media-css' href='/site/css/media.css' type='text/css' media='all'/>
-    <link rel='stylesheet' id='rt-woo-css' href='/site/css/woo.css' type='text/css' media='all'/>
+    <link rel='stylesheet' id='rt-woo-css' href='/site/css/woo.css?v=30082022' type='text/css' media='all'/>
     <link rel='stylesheet' id='rt-main-css' href='/site/css/main.css' type='text/css' media='all'/>
     <link rel='stylesheet' id='rt-main-css' href='/site/css/loading.css' type='text/css' media='all'/>
     <style id='rt-main-inline-css' type='text/css'>

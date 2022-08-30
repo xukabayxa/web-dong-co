@@ -162,6 +162,21 @@
                             </div>
                         </div>
                     </div>
+
+
+                    <div class="list 3 clear">
+                        <h2 class="headings">
+                            <a href="#">
+                                Chứng Chỉ </a>
+                        </h2>
+                        <div class="list-news">
+                            <div class="style-blog-3 rt-shortcodes rt-blog-shortcode" style="text-align: center">
+                                <img src="/img/chung-chi.png" style="height: 550px">
+
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
             </div><!-- #layout -->
