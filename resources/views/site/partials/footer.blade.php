@@ -1,4 +1,4 @@
-<footer class="site-footer">
+<footer class="site-footer" style="margin-top: 20px">
 
 
     <div class="container">
@@ -73,9 +73,9 @@
                                     fjs.parentNode.insertBefore(js, fjs);
                                 }(document, 'script', 'facebook-jssdk'));</script>
                         </p>
-                    
-                       
-                        
+
+
+
                 </div>
             </div>
         </div><!-- .bottom-footer -->

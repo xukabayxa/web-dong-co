@@ -11,9 +11,9 @@
                 </div>
                 <div class="header-main-text">
                     <div class="site-text">
-                        <h1 class="company-name">CÔNG TY TNHH ĐẦU TƯ THƯƠNG MẠI VÀ SẢN XUẤT TRANG LINH</h1>
-                        <h2 class="slogan">NHÀ NHẬP KHẨU & PHÂN PHỐI ỐNG TUY Ô THUỶ LỰC HÀNG ĐẦU VIỆT NAM</h2>
-                        <h3 class="header-hot-line">Hotline: {{ $config->hotline }}</h3>
+                        <h1 class="company-name">CÔNG TY CỔ PHẦN ĐẦU TƯ DTB VIỆT NAM</h1>
+                        <h2 class="slogan">ĐẠI DIỆN CHÍNH HÃNG KSB TẠI VIỆT NAM</h2>
+{{--                        <h3 class="header-hot-line">Hotline: {{ $config->hotline }}</h3>--}}
                     </div>
                 </div>
             </div>
