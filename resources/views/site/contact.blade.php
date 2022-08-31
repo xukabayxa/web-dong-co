@@ -39,12 +39,12 @@
                                                            class="wpcf7-form-control wpcf7-text" aria-invalid="false" ng-model="contact.user_name"
                                                            placeholder="Nhập họ và tên">
                                                 </span>
-                                            <div class="invalid-feedback">
-                                                 <span class=" d-block" role="alert"
+
+                                                 <span class="invalid-feedback  d-block" role="alert"
                                                        ng-if="errors && errors.user_name" >
                                                  <strong><% errors.user_name[0] %></strong>
                                             </span>
-                                            </div>
+
                                             </div>
 
                                             <div class="right"><label>Điện thoại</label><span
@@ -76,9 +76,11 @@
                                         <strong><% errors.content[0] %></strong>
                                         </span>
                                         </div>
-                                        <div class="submits"><input type="button" value="Gửi liên hệ" ng-click="submit()"
-                                                                    class="wpcf7-form-control wpcf7-submit"><span
-                                                class="ajax-loader"></span></div>
+                                        <div class="submits">
+
+                                            <button class="views-al" href="#"  ng-click="submit()">Gửi liên hệ</button>
+
+                                        </div>
                                     </div>
                                     <div class="wpcf7-response-output wpcf7-display-none"></div>
                                 </form>
