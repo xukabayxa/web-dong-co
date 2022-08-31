@@ -1,6 +1,6 @@
 @extends('site.layouts.master')
 @section('title')
-    <title>{{ $category->name  . ' - '. ucfirst($_SERVER['HTTP_HOST']) }}</title>
+    <title>{{ @$childCategory ? ($childCategory->name  . ' - '. ucfirst($_SERVER['HTTP_HOST'])) : ($category->name  . ' - '. ucfirst($_SERVER['HTTP_HOST']))}}</title>
 @endsection
 @section('content')
     <div class="container">
