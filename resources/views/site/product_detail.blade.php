@@ -59,10 +59,14 @@
                                             })
                                             ?>
                                             @foreach($attachments as $attachment)
-                                                <a href="{{$attachment}}"
-                                                   class="btn btn-primary btn-xs"><i class="fa fa-download"
-                                                                                     aria-hidden="true"></i> {{basename($attachment)}}</a>
+                                                <div style="margin-bottom: 10px">
+                                                    <a href="{{$attachment}}"
+                                                       class="btn btn-primary btn-xs"><i class="fa fa-download"
+                                                                                         aria-hidden="true"></i> {{basename($attachment)}}</a>
+                                                </div>
+
                                             @endforeach
+
 
 
                                         </div>
@@ -74,34 +78,63 @@
 
                         </div><!-- .summary -->
 
-
                         <div
                             class="post-434 product type-product status-publish has-post-thumbnail product_cat-san-pham product_cat-thiet-bi-bang-tai product_tag-bang-tai-chiu-dau-mo instock featured shipping-taxable product-type-simple">
 
-
                             <div class="woocommerce-tabs wc-tabs-wrapper">
-                                <ul class="rt_woocommerce_tabs wc-tabs list-unstyled clearfix" role="tablist">
-                                    <li class="description_tab active" id="tab-title-description" role="tab"
-                                        aria-controls="tab-description">
-                                        <a href="#tab-description">Mô tả sản phẩm</a>
+
+                                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" id="description-tab" data-toggle="tab" href="#description" role="tab" aria-controls="description" aria-selected="true">MÔ TẢ SẢN PHẨM</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="video-tab" data-toggle="tab" href="#video" role="tab" aria-controls="video" aria-selected="false">VIDEO</a>
                                     </li>
                                 </ul>
-                                <div
-                                    class="woocommerce-Tabs-panel woocommerce-Tabs-panel--description panel entry-content wc-tab"
-                                    id="tab-description" role="tabpanel" aria-labelledby="tab-title-description"
-                                    style="display: block;">
+                                <div class="tab-content" id="myTabContent" style="margin-top: 15px">
+                                    <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
+                                        {!! $product->body !!}
+                                    </div>
+                                    <div class="tab-pane fade" id="video" role="tabpanel" aria-labelledby="video-tab">
+                                        <div style="text-align: center">
+                                            @foreach($product->videos as $video)
+                                                <video src="{{$video->link}}" width="500px" height="300px" controls></video>
+                                            @endforeach
+                                        </div>
 
-                                    {!! $product->body !!}
-
-                                    {{--                                    <div class="rt-social"><a class="rt-link rt-facebook"--}}
-                                    {{--                                                              id="shareBtn"--}}
-                                    {{--                                                              target="_blank">Facebook</a>--}}
-                                    {{--                                        <a class="rt-link rt-twitter"--}}
-                                    {{--                                                                                             href="#"--}}
-                                    {{--                                                                                             target="_blank">Twitter</a>--}}
-
-                                    {{--                                    </div>--}}
+                                    </div>
                                 </div>
+
+{{--                                <ul class="rt_woocommerce_tabs wc-tabs list-unstyled clearfix" role="tablist">--}}
+{{--                                    <li class="description_tab active" id="tab-title-description" role="tab"--}}
+{{--                                        aria-controls="tab-description">--}}
+{{--                                        <a href="#tab-description">Mô tả sản phẩm</a>--}}
+{{--                                    </li>--}}
+
+{{--                                    <li class="description_tab" id="tab-title-video" role="tab"--}}
+{{--                                        aria-controls="tab-video">--}}
+{{--                                        <a href="#tab-video">Video</a>--}}
+{{--                                    </li>--}}
+{{--                                </ul>--}}
+
+{{--                                <div--}}
+{{--                                    class="woocommerce-Tabs-panel woocommerce-Tabs-panel--description panel entry-content wc-tab active"--}}
+{{--                                    id="tab-description" role="tabpanel" aria-labelledby="tab-title-description">--}}
+{{--                                    {!! $product->body !!}--}}
+{{--                                </div>--}}
+
+
+{{--                                <div--}}
+{{--                                    class="woocommerce-Tabs-panel woocommerce-Tabs-panel--description panel entry-content wc-tab"--}}
+{{--                                    id="tab-video" role="tabpanel" aria-labelledby="tab-title-video">--}}
+
+{{--                                    @foreach($product->videos as $video)--}}
+{{--                                        <video src="{{$video->link}}" controls></video>--}}
+{{--                                    @endforeach--}}
+{{--                                </div>--}}
+
+
+
                             </div>
 
 

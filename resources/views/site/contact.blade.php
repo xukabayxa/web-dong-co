@@ -4,7 +4,7 @@
 @endsection
 @section('content')
     <div class="container" ng-controller="Contact">
-        <div class="row">
+        <div class="">
             <div id="layout" class="clearfix sidebar-left">
 
                 <style>

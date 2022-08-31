@@ -3,7 +3,7 @@
     <!-- haeader Mid Start -->
     <div class="haeader-mid-area bg-white border-bm-1 visible-lg ">
         <div class="container">
-            <div class="row align-items-center">
+            <div class="">
                 <div class="logo-header">
                     <div class="logo-area">
                         <a href="{{route('front.home_page')}}"><img src="{{$config->image->path ?? "/site/assets/images/logo/logo.png"}}" alt="{{$config->web_title}}"></a>

@@ -34,6 +34,9 @@
     <link rel='stylesheet' id='woocommerce-general-css' href='/site/css/woocommerce.css' type='text/css' media='all'/>
     <link rel='stylesheet' id='woocommerce-general-css' href='css/woocommerce.css' type='text/css' media='all'/>
     <link rel='stylesheet' id='bootstrap-css' href='/site/css/bootstrap.min.css' type='text/css' media='all'/>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
     <link rel='stylesheet' id='font-awesome-css' href='/site/css/font-awesome.min.css' type='text/css' media='all'/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel='stylesheet' id='slick-css' href='/site/css/slick.min.css' type='text/css' media='all'/>
