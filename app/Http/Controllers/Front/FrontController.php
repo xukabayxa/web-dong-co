@@ -98,6 +98,7 @@ class FrontController extends Controller
         $category = Category::findBySlug($slug);
         $category->child_categories = $this->categoryService->getChildCategory($category, 1);
         $categories = Category::getAllCategory();
+        $childCategory = null;
 
         if ($childSlug) {
             $childCategory = Category::findBySlug($childSlug);
@@ -106,7 +107,7 @@ class FrontController extends Controller
             $productCategory = Product::query()->where(['status' => 1, 'cate_id' => $category->id])->latest()->paginate('16');
         }
 
-        return view('site.product_category', compact('categories', 'category', 'productCategory', 'childSlug'));
+        return view('site.product_category', compact('categories', 'category', 'productCategory', 'childSlug', 'childCategory'));
     }
 
     /**

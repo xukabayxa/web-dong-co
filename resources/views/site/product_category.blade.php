@@ -4,7 +4,7 @@
 @endsection
 @section('content')
     <div class="container">
-        <div class="row">
+        <div class="">
             <div id="layout" class="clearfix sidebar-left">
 
 
@@ -15,7 +15,8 @@
 
                         </header>
 
-                        <h1 class="woocommerce-products-header__title page-title heading">{{$category->name}}</h1>
+
+                        <h1 class="woocommerce-products-header__title page-title heading">{{@$childCategory ? $childCategory->name : $category->name}}</h1>
 
                         @if($category->child_categories->count() && ! $childSlug)
                             <div class="box-pro">
