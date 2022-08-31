@@ -28,6 +28,23 @@
             <?php
             $users = \App\Model\Common\User::role('Nhân viên tư vấn')->get();
             ?>
+            <div id="support-1" class="supporter">
+                <div class="info">
+                    <div class="support-rt"><span
+                            class="name-support"></span><span
+                            class="phone-support phone-support_2 phone_support_3"><a
+                                href=tel:{{$config->zalo}}><i class="fa fa-phone-square"
+                                                                    aria-hidden="true"></i>{{$config->zalo}}</a></span>
+                        <div class='socical'><a href="">
+                                <img src="http://sonhaiphat.vn/wp-content/themes/RT/assets/css/images/icon-sky.png"
+                                     style="border: none; width:auto; height: 24px;" width="100"
+                                     height="24" alt="My status"/>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             @foreach($users as $user)
                 <div id="support-1" class="supporter">
                     <div class="info">

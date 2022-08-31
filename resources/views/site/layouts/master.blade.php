@@ -3,7 +3,7 @@
 <head>
     @include('site.partials.head')
 </head>
-<body class="home blog hfeed has-sidebar woocommerce single-product" ng-app="App">
+<body class="home blog hfeed has-sidebar woocommerce single-product" ng-app="App" style="font-size: 14px">
 <div class="site site-container full w1200">
     @include('site.partials.header')
 
