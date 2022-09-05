@@ -8,7 +8,7 @@
                 <div id="rt-widget-text-2" class="widget rt_textwidget"><h3 class="widget-title">Thông tin liên
                         hệ</h3>
                     <div class="classic-text-widget"><p>{{$config->web_title}}<br/>
-                            ĐC: {{$config->address_company}}.<br/>
+                            ĐC: {{$config->address_company}}<br/>
                             ĐT: {{$config->zalo}}<br/>
                             Email: {{$config->email}}<br/>
                             Website: {{URL::to('/')}}</p>

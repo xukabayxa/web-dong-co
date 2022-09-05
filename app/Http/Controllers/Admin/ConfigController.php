@@ -32,8 +32,8 @@ class ConfigController extends Controller
 			$request->all(),
 			[
 				'web_title' => 'required|max:255',
-				'hotline' => 'required|max:10',
-				'zalo' => 'required|max:10',
+				'hotline' => 'required',
+				'zalo' => 'required',
 				'email' => 'required|email',
 				'facebook' => 'nullable|max:255',
 				'image' => 'nullable|file|mimes:jpg,jpeg,png|max:3000',
