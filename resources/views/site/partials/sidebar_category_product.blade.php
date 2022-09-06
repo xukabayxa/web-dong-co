@@ -31,7 +31,7 @@
             <div id="support-1" class="supporter">
                 <div class="info">
                     <div class="support-rt"><span
-                            class="name-support"></span><span
+                            class="name-support" style="font-weight: bold">Hotline</span><span
                             class="phone-support phone-support_2 phone_support_3"><a
                                 href=tel:{{$config->zalo}}><i class="fa fa-phone-square"
                                                                     aria-hidden="true"></i>{{$config->zalo}}</a></span>
@@ -49,7 +49,8 @@
                 <div id="support-1" class="supporter">
                     <div class="info">
                         <div class="support-rt"><span
-                                class="name-support">{{$user->name}}</span><span
+                                class="name-support">{{$user->name}}</span>
+                            <span
                                 class="phone-support phone-support_2 phone_support_3"><a
                                     href=tel:{{$user->phone_number}}><i class="fa fa-phone-square"
                                                                      aria-hidden="true"></i>{{$user->phone_number}}</a></span>
