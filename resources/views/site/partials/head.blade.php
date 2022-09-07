@@ -16,6 +16,10 @@
     <meta name="twitter:card" content="summary"/>
     <meta name="twitter:title" content=""/>
 
+    <meta property="og:image" content="{{$config->image->path ?? ''}}" />
+    <meta property="og:image:width" content="1280" >
+    <meta property="og:image:height" content="720"/>
+
     <!-- / Yoast SEO plugin. -->
     <link rel='dns-prefetch' href='//translate.google.com'/>
     <link rel='dns-prefetch' href='//code.jquery.com'/>
