@@ -70,6 +70,5 @@ class AppServiceProvider extends ServiceProvider
             'site.layouts.master',
             HeaderComposer::class
         );
-
     }
 }

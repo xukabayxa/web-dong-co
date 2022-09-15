@@ -26,7 +26,7 @@
                                 src='/site/image/support.png'/>
         <div id="supporter-info" class="gd_support_3">
             <?php
-            $users = \App\Model\Common\User::role('Nhân viên tư vấn')->get();
+            $users = \App\Model\Admin\Consultant::query()->latest()->get();
             ?>
             <div id="support-1" class="supporter">
                 <div class="info">
@@ -52,8 +52,8 @@
                                 class="name-support">{{$user->name}}</span>
                             <span
                                 class="phone-support phone-support_2 phone_support_3"><a
-                                    href=tel:{{$user->phone_number}}><i class="fa fa-phone-square"
-                                                                     aria-hidden="true"></i>{{$user->phone_number}}</a></span>
+                                    href=tel:{{$user->phone}}><i class="fa fa-phone-square"
+                                                                     aria-hidden="true"></i>{{$user->phone}}</a></span>
                             <div class='socical'><a href="">
                                     <img src="http://sonhaiphat.vn/wp-content/themes/RT/assets/css/images/icon-sky.png"
                                          style="border: none; width:auto; height: 24px;" width="100"

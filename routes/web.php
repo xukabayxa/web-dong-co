@@ -180,6 +180,18 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
         Route::get('/exportExcel','Admin\PartnerController@exportExcel')->name('partners.exportExcel');
     });
 
+    // nhân viên tư vấn
+    Route::group(['prefix' => 'consultants'], function () {
+        Route::get('/', 'Admin\ConsultantController@index')->name('consultants.index');
+        Route::get('/searchData', 'Admin\ConsultantController@searchData')->name('consultants.searchData');
+        Route::get('/{id}/show', 'Admin\ConsultantController@show')->name('consultants.show');
+        Route::get('/create', 'Admin\ConsultantController@create')->name('consultants.create');
+        Route::post('/', 'Admin\ConsultantController@store')->name('consultants.store');
+        Route::post('/{id}/update', 'Admin\ConsultantController@update')->name('consultants.update');
+        Route::get('/{id}/delete', 'Admin\ConsultantController@delete')->name('consultants.delete');
+        Route::get('/{id}/getDataForEdit', 'Admin\ConsultantController@getDataForEdit');
+    });
+
     // Danh mục đặc biệt
     Route::group(['prefix' => 'category-special'], function () {
         Route::get('/', 'Admin\CategorySpecialController@index')->name('category_special.index');

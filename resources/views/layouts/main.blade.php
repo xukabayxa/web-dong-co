@@ -71,9 +71,12 @@
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4 sidebar-dark-orange">
             <!-- Brand Logo -->
+            <?php
+                $config = \App\Model\Admin\Config::query()->get()->first();
+            ?>
             <a href="{{ route('index') }}" class="brand-link">
                 <img src="{{ asset('img/logo/logo_normal.png') }}" alt="G7-Autocare" class="brand-image" style="opacity: 1">
-                <img src="{{ asset('img/logo/logo_mini.png') }}" alt="G7-Autocare" class="brand-image brand-mini" style="opacity: 1">
+                <img src="{{ $config->image->path ?? '' }}" alt="G7-Autocare" class="brand-image brand-mini" style="opacity: 1">
             </a>
             <!-- Sidebar -->
             @include('partial.common.sidebar')

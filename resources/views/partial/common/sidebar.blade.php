@@ -137,12 +137,12 @@
                         </a>
                     </li>
 
-                    <li class="nav-item">
-                        <a href="{{ route('partners.index') }}" class="nav-link {{ Request::routeIs('partners.index') ? 'active' : '' }}">
-                            <i class="far fas  fa-angle-right nav-icon"></i>
-                            <p>Danh mục đối tác</p>
-                        </a>
-                    </li>
+{{--                    <li class="nav-item">--}}
+{{--                        <a href="{{ route('partners.index') }}" class="nav-link {{ Request::routeIs('partners.index') ? 'active' : '' }}">--}}
+{{--                            <i class="far fas  fa-angle-right nav-icon"></i>--}}
+{{--                            <p>Danh mục đối tác</p>--}}
+{{--                        </a>--}}
+{{--                    </li>--}}
 
                     <li class="nav-item">
                         <a href="{{ route('banners.index') }}" class="nav-link {{ Request::routeIs('banners.index') ? 'active' : '' }}">
@@ -155,6 +155,13 @@
                         <a href="{{ route('stores.index') }}" class="nav-link {{ Request::routeIs('stores.index') ? 'active' : '' }}">
                             <i class="far fas  fa-angle-right nav-icon"></i>
                             <p>Danh mục cửa hàng chi nhánh</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="{{ route('consultants.index') }}" class="nav-link {{ Request::routeIs('consultants.index') ? 'active' : '' }}">
+                            <i class="far fas  fa-angle-right nav-icon"></i>
+                            <p>Danh mục nhân viên tư vấn</p>
                         </a>
                     </li>
                 </ul>
@@ -193,15 +200,15 @@
                 </ul>
             </li>
 
-            <li class="nav-item has-treeview  {{ request()->is('admin/reviews') || request()->is('admin/reviews*') ? 'menu-open' : '' }} ">
-                <a href="{{ route('Review.index') }}" class="nav-link">
-                    <i class="nav-icon fas fa-star"></i>
-                    <p>
-                        Đánh giá khách hàng
-                        <i class="fas fa-angle-left right"></i>
-                    </p>
-                </a>
-            </li>
+{{--            <li class="nav-item has-treeview  {{ request()->is('admin/reviews') || request()->is('admin/reviews*') ? 'menu-open' : '' }} ">--}}
+{{--                <a href="{{ route('Review.index') }}" class="nav-link">--}}
+{{--                    <i class="nav-icon fas fa-star"></i>--}}
+{{--                    <p>--}}
+{{--                        Đánh giá khách hàng--}}
+{{--                        <i class="fas fa-angle-left right"></i>--}}
+{{--                    </p>--}}
+{{--                </a>--}}
+{{--            </li>--}}
             {{--
             <li class="nav-item has-treeview">
                 <a href="#" class="nav-link">
