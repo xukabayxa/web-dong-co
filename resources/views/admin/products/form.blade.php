@@ -108,16 +108,6 @@
         </div>
 
         <div class="form-group custom-group mb-4">
-            <label class="form-label">Thông số kỹ thuật</label>
-            <textarea class="form-control" ck-editor rows="5" ng-model="form.intro"></textarea>
-            <span class="invalid-feedback d-block" role="alert">
-                <strong>
-                    <% errors.intro[0] %>
-                </strong>
-            </span>
-        </div>
-
-        <div class="form-group custom-group mb-4">
             <label class="form-label">Chi tiết sản phẩm</label>
             <textarea class="form-control ck-editor" ck-editor rows="5" ng-model="form.body"></textarea>
             <span class="invalid-feedback d-block" role="alert">
