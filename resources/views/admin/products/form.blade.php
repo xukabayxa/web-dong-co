@@ -140,7 +140,7 @@
             </span>
         </div>
         <div class="form-group custom-group mb-4">
-            <label class="form-label required-label">Giá bán</label>
+            <label class="form-label">Giá bán</label>
             <input class="form-control " type="text" ng-model="form.price">
             <span class="invalid-feedback d-block" role="alert">
                 <strong>
@@ -157,7 +157,7 @@
             </select>
             <span class="invalid-feedback d-block" role="alert">
                 <strong>
-                    <% errors.name[0] %>
+                    <% errors.status[0] %>
                 </strong>
             </span>
         </div>
