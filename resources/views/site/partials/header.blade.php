@@ -49,9 +49,11 @@
                                 </li>
 
 
+                                @foreach($postCategories as $post_category)
+                                    <li><a href="{{route('front.post-list', $post_category->slug)}}">{{$post_category->name}}</a>
+                                    </li>
+                                @endforeach
 
-                                <li><a href="{{route('front.post-list')}}">Tin tức</a>
-                                </li>
 
                                 <li><a href={{route('front.about')}}>Giới thiệu</a></li>
                                 <li><a href="{{route('front.contact')}}">Liên hệ</a></li>

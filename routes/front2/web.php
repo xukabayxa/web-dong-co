@@ -3,7 +3,9 @@
 Route::group(['namespace' => 'Front'], function () {
     Route::get('/','FrontController@index')->name('front.home_page');
     Route::get('/san-pham','FrontController@productList')->name('front.product-list');
-    Route::get('/tin-tuc','FrontController@posts')->name('front.post-list');
+//    Route::get('/tin-tuc','FrontController@posts')->name('front.post-list');
+    Route::get('/tin-tuc/{slug?}/{postSlug?}','FrontController@getPostCategory')->name('front.post-list');
+
     Route::get('/du-an','FrontController@projects')->name('front.project-list');
     Route::get('/ve-chung-toi','FrontController@about')->name('front.about');
     Route::get('/lien-he','FrontController@contact')->name('front.contact');

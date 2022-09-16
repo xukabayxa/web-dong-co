@@ -132,11 +132,32 @@ class FrontController extends Controller
      */
     public function posts(Request $request)
     {
-        $categories = Category::getAllCategory();
-        $posts = Post::query()->where('status', 1)->paginate(12);
-
-        return view('site.news', compact('posts', 'categories'));
+//        $posts = Post::query()->where('status', 1)->paginate(12);
+//
+//        return view('site.news', compact('posts', 'categories'));
     }
+
+    public function getPostCategory(Request $request, $slug = null, $postSlug = null)
+    {
+        $categories = Category::getAllCategory();
+
+        if (!$postSlug) {
+            if ($slug) {
+                $category = PostCategory::findBySlug($slug);
+                $posts = $category->posts()->paginate(12);
+            } else {
+                $posts = Post::query()->with(['category'])->where('status', 1)->latest()->paginate(12);
+            }
+            return view('site.news', compact('categories', 'posts'));
+        }  else {
+            $post = Post::findBySlug($postSlug);
+            $postsRelated = Post::query()->where('cate_id', $post->category->id)
+                ->whereNotIn('id', [$post->id])->latest()->limit(5)->get();
+            return view('site.news_detail', compact('post', 'postsRelated', 'categories'));
+        }
+
+    }
+
 
     /**
      * @param Request $request

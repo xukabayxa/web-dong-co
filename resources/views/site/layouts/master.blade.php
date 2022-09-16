@@ -140,11 +140,19 @@
 
             location.href = '/tim-kiem?keyword=' + (keyword);
         }
-
     });
-
-
-
 </script>
+
+@if($config->click_call)
+    @include('partial.social.click-call')
+@endif
+
+@if($config->facebook_chat)
+    @include('partial.social.facebookchat')
+@endif
+
+@if($config->zalo_chat)
+    @include('partial.social.zalo')
+@endif
 </body>
 </html>
