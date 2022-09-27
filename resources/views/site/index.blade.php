@@ -135,7 +135,7 @@
                                                  class="element hentry post-item fusion-one-fourth fusion-spacing-yes fusion-layout-column  post-9385 post type-post status-publish format-standard has-post-thumbnail category-tin-tuc">
                                             <div class="post-inner">
                                                 <div class="entry-thumb"><a
-                                                        href="{{route('front.post-detail', $post->slug)}}"
+                                                        href="{{route('front.post-list', ['slug' => $post->category->slug, 'postSlug' => $post->slug])}}"
                                                         title="{{$post->name}}"><img
                                                             width="250" height="178"
                                                             src="{{$post->image->path ?? ''}}"
@@ -146,7 +146,7 @@
                                                        style="display:none;">{{$post->created_at->format('d/m/Y H:i')}}</p>
                                                     <span>view</span></div>
                                                 <div class="entry-content"><h3 class="entry-title"><a
-                                                            href="{{route('front.post-detail', $post->slug)}}"
+                                                            href="{{route('front.post-list', ['slug' => $post->category->slug, 'postSlug' => $post->slug])}}"
                                                             title="{{$post->name}}">{{$post->name}}</a>
                                                     </h3>
                                                     <div class="meta"><span class="date-time"><i class="fa fa-clock-o"
