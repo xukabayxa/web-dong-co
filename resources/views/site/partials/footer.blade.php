@@ -18,17 +18,17 @@
                     <div class="image-adv">
                         <div class="image-item">
                             <a href="{{$config->facebook}}" rel="" title="">
-                                <img src="http://sonhaiphat.vn/wp-content/uploads/2018/03/icon2.png" alt=""/>
+                                <img src="/site/image/icon/ico_fb.png" alt=""/>
                             </a>
                         </div>
                         <div class="image-item">
                             <a href="{{$config->instagram}}" rel="" title="">
-                                <img src="http://sonhaiphat.vn/wp-content/uploads/2018/03/icon3.png" alt=""/>
+                                <img src="/site/image/icon/ico_ins.png" alt=""/>
                             </a>
                         </div>
                         <div class="image-item">
                             <a href="{{$config->twitter}}" rel="" title="">
-                                <img src="http://sonhaiphat.vn/wp-content/uploads/2018/03/icon4.png" alt=""/>
+                                <img src="/site/image/icon/ico_tw.png" alt=""/>
                             </a>
                         </div>
                     </div>

@@ -36,7 +36,7 @@
                                 href=tel:{{$config->zalo}}><i class="fa fa-phone-square"
                                                                     aria-hidden="true"></i>{{$config->zalo}}</a></span>
                         <div class='socical'><a href="">
-                                <img src="http://sonhaiphat.vn/wp-content/themes/RT/assets/css/images/icon-sky.png"
+                                <img src="/site/image/icon/icon-sky.png"
                                      style="border: none; width:auto; height: 24px;" width="100"
                                      height="24" alt="My status"/>
                             </a>
@@ -55,7 +55,7 @@
                                     href=tel:{{$user->phone}}><i class="fa fa-phone-square"
                                                                      aria-hidden="true"></i>{{$user->phone}}</a></span>
                             <div class='socical'><a href="">
-                                    <img src="http://sonhaiphat.vn/wp-content/themes/RT/assets/css/images/icon-sky.png"
+                                    <img src="/site/image/icon/icon-sky.png"
                                          style="border: none; width:auto; height: 24px;" width="100"
                                          height="24" alt="My status"/>
                                 </a>

@@ -30,7 +30,7 @@
                                 <h3 class="heading" style="margin: 0;">giới thiệu</h3>
                                 <div class="content_page">
                                     <div class="colum-left">
-                                        <img src="http://sonhaiphat.vn/wp-content/uploads/2018/03/images-3-1.jpg">
+                                        <img src="/">
                                     </div>
                                     <div class="colum-right">
                                         <div class="des_page">

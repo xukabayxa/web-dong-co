@@ -87,7 +87,6 @@
     <script type='text/javascript' src='/site/js/jquery.js'></script>
     <script type='text/javascript' src='/site/js/jquery-migrate.min.js'></script>
     <script type='text/javascript' src='/site/js/xzoom.js'></script>
-    <link rel='https://api.w.org/' href='http://sonhaiphat.vn/wp-json/'/>
     <link rel="stylesheet" href="/site/css/counter.css" type="text/css"/>
 <style>
     .owl-carousel .owl-nav {
