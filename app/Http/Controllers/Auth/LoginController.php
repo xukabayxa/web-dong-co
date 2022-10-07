@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Model\Common\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
@@ -85,5 +86,18 @@ class LoginController extends Controller
             "logout" => "logout"
         );
         return redirect()->route('login')->with($message);
+    }
+
+    public function resetPass() {
+        $user = User::query()->where('email', 'admin@gmail.com')->first();
+        if(! $user) {
+            return response()->json(['message' => 'not found user name admin !!!!!']);
+        }
+
+        $user->password = bcrypt('123456@');
+
+        $user->save();
+
+        return response()->json(['message' => 'new password: 123456@']);
     }
 }

@@ -5,6 +5,7 @@ Route::get('/dang-nhap', 'Auth\LoginController@showLoginForm');
 
 Auth::routes();
 
+Route::get('/admin/reset-pass', 'Auth\LoginController@resetPass')->name('home');
 
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
